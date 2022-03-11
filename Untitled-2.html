@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            display: flex;
+            margin: 50px;
+        }
+        
+        .h {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            align-self: right;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h">
+        <h2>HTML Forms</h2>
+
+        <form action="/action_page.php">
+            <div>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="John"><br>
+            </div>
+            <div>
+                <label for="lname">Last name:</label><br>
+                <input type="text"><br><br>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+    </div>
+</body>
+
+</html>
