@@ -9,11 +9,12 @@ $sql = "INSERT INTO Contact(Names,Email,Message,Subjects) VALUES ('$name','$emai
 //$conn->query($sql);
 if ($conn->query($sql) === TRUE) 
 {
-  //echo "New record created successfully<BR><BR><BR>";
+  echo "New record created successfully<BR><BR><BR>";
+  //echo '<script>alert("Form Submitted Successfully")</script>';
 } 
 else 
 {
-  //echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
