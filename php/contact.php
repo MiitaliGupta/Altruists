@@ -9,13 +9,20 @@ $sql = "INSERT INTO Contact(Names,Email,Message,Subjects) VALUES ('$name','$emai
 //$conn->query($sql);
 if ($conn->query($sql) === TRUE) 
 {
-  echo "New record created successfully<BR><BR><BR>";
-  //echo '<script>alert("Form Submitted Successfully")</script>';
+//echo "New record created successfully<BR><BR><BR>";
+echo "<script LANGUAGE='JavaScript'>
+window.alert('Form Submitted Successfully');
+window.location. href='http://localhost:3307/Altruists/contact.html';
+</script>";
+
 } 
 else 
 {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  // echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "<script LANGUAGE='JavaScript'>
+window.alert('Form Submition Unuccessfully');
+window.location. href='http://localhost:3307/Altruists/contact.html';
+</script>";
 }
-
 $conn->close();
 ?>
