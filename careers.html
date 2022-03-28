@@ -57,7 +57,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Causes</span></p>
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>volunteer</span></p>
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Volunteers</h1>
           </div>
         </div>
@@ -69,7 +69,7 @@
       <div class="container">
       	<div class="row">
       		<div class="col-md-4 ftco-animate">
-      			<div class="cause-entry">
+      			<div class="cause-entry">+
     					<a href="#" class="img" style="background-image: url(images/cause-1.jpg);"></a>
     					<div class="text p-3 p-md-4">
     						<h3><a href="#">EDUCATION</a></h3>
@@ -82,6 +82,7 @@
     					</div>
     				</div>
       		</div>
+
       		<div class="col-md-4 ftco-animate">
       			<div class="cause-entry">
     					<a href="#" class="img" style="background-image: url(images/cause-2.jpg);"></a>
@@ -140,24 +141,76 @@
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
     			<h3 class="mb-3">Be a volunteer</h3>
     			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Date of birth">
-            </div>
-          
+            
             <div class="form-control">
-              Select Gender:<br>       
+              <label for="phone"> Your name:</label>
+              <input type="tel" id="phone" name="phone" size="32" required >
+              </div>
+             <br>
+            <div class="form-control">
+            <label for="phone"> Phone number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[789][0-9]{9}" size="28" required >
+            </div>
+             <br>
+            <div class="form-control">
+              <label for="email">Your email:</label>
+
+               <input type="email" id="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" size="31" required>
+
+           </div>
+           <br>
+           <div class="form-control">
+           <label for="dateofbirth">Date Of Birth</label>
+            <input type="date" name="dateofbirth" id="dateofbirth">
+          </div>
+          <br>
+            <div class="form-control">
+              Select Gender:              
                          <label><input type="radio" name="gender" value="male" required>Male</label>
                          <label><input type="radio" name="gender" value="female">Female</label>
                          <label><input type="radio" name="gender" value="other">Other</label>
              </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email">
-            </div>
+
+            <h3>  Address :  </h3>
+            <input type="line 1" 
+         class="form-control" 
+         id="inputline1" 
+         placeholder="address line 1">
+            <input type="line 2" 
+            class="form-control" 
+            id="autocomplete" 
+            placeholder="line 2">
+    
+          <input type="city" 
+          class="form-control" 
+          id="inputCity" 
+          placeholder="City">
+  
+           <input type="state" 
+          class="form-control" 
+          id="inputState" 
+          placeholder="State">
+  
+         <input type="zip" 
+         class="form-control" 
+         id="inputZip" 
+         placeholder="Zip">
+         </div>
+         <div class="form-control">
+         select your image:
+         <br>
+         <input type="file" id="myfile" name="myfile">
+        </div>
+        <br>
+         <div class="form-control">
+                <label for="adhaar"> adhaar Id:</label>
+                <input type="varchar" id="adhaar" name="a" pattern="[789][0-9]{9}" size="28" required >
+                </div>
+                <br>
+              
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Anything Extra"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
@@ -218,7 +271,7 @@
                 <li><a href="#" class="py-2 d-block">Home</a></li>
                 <li><a href="#" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Donate</a></li>
-                <li><a href="#" class="py-2 d-block">Causes</a></li>
+                <li><a href="#" class="py-2 d-block">volunteers</a></li>
                 <li><a href="#" class="py-2 d-block">Event</a></li>
                 <li><a href="#" class="py-2 d-block">Blog</a></li>
               </ul>
