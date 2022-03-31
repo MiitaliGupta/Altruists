@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Altruists | Teacher</title>
+  <title>Altruists | Teacher SignUp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -84,68 +84,108 @@
   </div>
 
 
-  <section class="ftco-section contact-section ftco-degree-bg">
-    <div class="container">
-      <div class="row block-9">
-        <div class="col-md-6 pr-md-5">
-          <h4 class="mb-4">Fill in the Details!</h4>
-          <form action="#">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Date Of Birth">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Contact Number">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Adhaar Number">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Line 1">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Line 2">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="City">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="State">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="PIN">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="School/College">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Degree">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Year">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Result">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Experience Years">
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
-            </div>
-          </form>
+  <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
+    <div class="overlay"></div>
+    <!-- <div class="container"> -->
+        <form action="php/careers.php" class="volunter-form container" method="post">
+            <div class="row d-md-flex">
+            <!-- <div class="col-md-6 d-flex ftco-animate"> -->
+                
+            <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+                <h1 class="mb-3" style="color:white;">Sign Up : Teacher</h1>
 
-        </div>
-        
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name" name="name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Date of birth" name="dob">
+                </div>
+                <div class="form-group">
+                    <div class="form-control">
+                        Select Gender:&nbsp;
+                        <label><input type="radio" name="gender" value="male"
+                                required>&nbsp;Male</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="gender" value="female">&nbsp;Female</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="gender" value="other">&nbsp;Other</label>
+                    </div>
+                </div>
+                <div class="form-control" Style="Border:none;">Your Address : </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Line 1" name="line1">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Line 2" name="line2">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="City" name="city">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="State" name="state">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="PIN" name="pin">
+                </div>
+                <div class="form-control" Style="Border:none;">Teaching : </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Subject 1" name="sub1">
+              </div><div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject 2" name="sub2">
+            </div>
+            </div>
 
-      </div>
+
+            <div class=" col col-md-6 pl-md-5  volunteer ftco-animate order-last">
+                <!-- <form action="#" class="volunter-form" method="post"> -->
+                    <br><br><br>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Contact Number" name="number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Adhaar" name="adhaar">
+                    </div>
+               
+
+                <div class="form-control" Style="Border:none;">Your Qualification : </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="School/College" name="clg">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Degree" name="deg">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Year of Completion" name="year">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Result(%)" name="percent">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Experience in Years" name="exp">
+              </div>
+              <div class="form-control" Style="Border:none;"></div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Class for Subject 1" name="cl1">
+              </div><div class="form-group">
+                <input type="text" class="form-control" placeholder="Class for Subject 2" name="cl2">
+            </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                </div>
+            </div>
+            </div>
+        </form>
+    <!-- </div> -->
+
     </div>
-  </section>
+    </div>
+    </div>
+</section>
+
 
 
 
@@ -205,13 +245,31 @@
       <div class="col-md-2">
          <div class="ftco-footer-widget mb-4 ml-md-4">
           <h2 class="ftco-heading-2">Site Links</h2>
-          <ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">Home</a></li>
-            <li><a href="#" class="py-2 d-block">Services</a></li>
-            <li><a href="#" class="py-2 d-block">Donate</a></li>
-            <li><a href="#" class="py-2 d-block">Careers</a></li>
-            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-            <li><a href="#" class="py-2 d-block">Login</a></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
+                <li><a class="dropdown-item" href="teacher.html">Teacher</a></li>
+                <li><a class="dropdown-item" href="#">Student</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
+                <li><a class="dropdown-item" href="#">Old Age Home Registration</a></li>
+                <li><a class="dropdown-item" href="#">Old Age Home Admission</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
+                <li><a class="dropdown-item" href="#">Employer Registrations</a></li>
+                <li><a class="dropdown-item" href="#">Job Seeking</a></li>
+                <li><hr class="dropdown-divider"></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
+            <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Login</a></li>
           </ul>
         </div>
       </div>

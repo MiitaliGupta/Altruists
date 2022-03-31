@@ -83,63 +83,92 @@
     
 
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row d-md-flex">
-    		<div class="col-md-6 d-flex ftco-animate">
-    			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
-    		</div>
-    		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3">Donate Now!</h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Phone Number">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email">
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
-            </div>
-          </form>
-    		</div>    			
-    		</div>
-    	</div>
-    </section>
+      <div class="overlay"></div>
+      <!-- <div class="container"> -->
+          <form action="php/careers.php" class="volunter-form container" method="post">
+              <div class="row d-md-flex">
+              <!-- <div class="col-md-6 d-flex ftco-animate"> -->
+                  
+              <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+                  <h1 class="mb-3" style="color:white;">Donate Now!</h1>
 
-    <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row d-md-flex">
-    		<div class="col-md-6 d-flex ftco-animate">
-    			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
-    		</div>
-    		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3">Be a volunteer</h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
-            </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Business Name" name="bname">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Your Name" name="name">
+                  </div>
+                  <div class="form-group">
+                      <div class="form-control">
+                          Select Gender:&nbsp;
+                          <label><input type="radio" name="gender" value="male"
+                                  required>&nbsp;Male</label>&nbsp;&nbsp;
+                          <label><input type="radio" name="gender" value="female">&nbsp;Female</label>&nbsp;&nbsp;
+                          <label><input type="radio" name="gender" value="other">&nbsp;Other</label>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Email" name="email">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Contact Number" name="number">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your PAN No." name="pan">
+                </div>
+                <div class="form-control" Style="Border:none;">Your Donation : </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Amount in INR" name="amt">
+                </div>
+                  
+              </div>
+
+
+              <div class=" col col-md-6 pl-md-5  volunteer ftco-animate order-last">
+                  <!-- <form action="#" class="volunter-form" method="post"> -->
+                      <br><br><br>
+                      <div class="form-control" Style="Border:none;">Your Address : </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Line 1" name="line1">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Line 2" name="line2">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="City" name="city">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="State" name="state">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="PIN" name="pin">
+                  </div>
+                 
+
+                  <div class="form-control" Style="Border:none;"></div>
+                  <div class="form-group">
+                    <div class="form-control">
+                        Payment Method:&nbsp;
+                        <label><input type="radio" name="payment" value="UPI"
+                                required>&nbsp;UPI</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="payment" value="card">&nbsp;Card</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="payment" value="transfer">&nbsp;NEFT/RTGS</label>
+                    </div>
+                </div>
+
+                  <div class="form-group">
+                      <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                  </div>
+              </div>
+              </div>
           </form>
-    		</div>    			
-    		</div>
-    	</div>
-    </section>
+      <!-- </div> -->
+
+      </div>
+      </div>
+      </div>
+  </section>
+
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
@@ -197,13 +226,31 @@
           <div class="col-md-2">
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Site Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">Services</a></li>
-                <li><a href="#" class="py-2 d-block">Donate</a></li>
-                <li><a href="#" class="py-2 d-block">Careers</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-                <li><a href="#" class="py-2 d-block">Login</a></li>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
+                    <li><a class="dropdown-item" href="teacher.html">Teacher</a></li>
+                    <li><a class="dropdown-item" href="#">Student</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
+                    <li><a class="dropdown-item" href="#">Old Age Home Registration</a></li>
+                    <li><a class="dropdown-item" href="#">Old Age Home Admission</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
+                    <li><a class="dropdown-item" href="#">Employer Registrations</a></li>
+                    <li><a class="dropdown-item" href="#">Job Seeking</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Login</a></li>
               </ul>
             </div>
           </div>
