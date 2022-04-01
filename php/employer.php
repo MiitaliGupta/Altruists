@@ -15,12 +15,7 @@ $id = "";
 
 $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
 
-// $sql1 = "INSERT INTO Employer(User_Id, Names, BusinessName, Email, ContactNo, post, avail, requal) VALUES (Null,'$name','$bname','$email','$number','$post','$avail','$requal')";
-// $sql1 = "INSERT INTO Employer(User_Id, Names, BusinessName, Email, ContactNo, post, avail) VALUES (Null,'$name','$bname','$email','$number','$post','$avail')";
-$sql1 = "INSERT INTO Employer VALUES (12,Null, '$name','$bname','$email','$number','$post','$avail',NUll)";
-
-// $conn->query($sql1);
-
+$sql1 = "INSERT INTO Employer(User_Id, Names, BusinessName, Email, ContactNo, post, avail, requal) VALUES (Null,'$name','$bname','$email','$number','$post','$avail','$requal')";
 
 if ($conn->query($sql1) === TRUE) 
 {
