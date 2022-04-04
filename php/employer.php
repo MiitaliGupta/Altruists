@@ -2,11 +2,13 @@
 $name=$_POST["name"];
 $bname=$_POST["bname"];
 $email=$_POST["email"];
+$num=$_POST["number"];
 $post=$_POST["post"];
-$email=$_POST["email"];
-$number=$_POST["number"];
 $avail=$_POST["avail"];
-// $requal=$_POST["requal"];
+$hrs=$_POST["hours"];
+$sal=$_POST["sal"];
+$requal=$_POST["requal"] ;
+$job=$_POST["jobdesc"];
 
 $addid = "";
 $infoid = "";
@@ -15,7 +17,8 @@ $id = "";
 
 $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
 
-$sql1 = "INSERT INTO Employer(User_Id, Names, BusinessName, Email, ContactNo, post, avail, requal) VALUES (Null,'$name','$bname','$email','$number','$post','$avail','$requal')";
+// $sql1 = "INSERT INTO Employer(User_Id, Names, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc) VALUES (Null,'$name','$bname','$email','$num','$post','$avail','$hrs','$sal','$requal','$job')";
+$sql1 = "INSERT INTO Employer VALUES (Null,Null,'$name','$bname','$email','$num','$post','$avail','$hrs','$sal','$requal','$job')";
 
 if ($conn->query($sql1) === TRUE) 
 {

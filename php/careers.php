@@ -31,30 +31,31 @@ $sql5 = "INSERT INTO Volunteer(Info_Id,Image) VALUES ('$row','$img')";
 
 $conn->query($sql1);
 
-$addid = $conn->query($sql2) ;
+$addid = $conn->query($sql2);
 $row = mysqli_fetch_array($addid);
 // $id = $row['MAX(Add_Id)'];
+echo $row;
 
-$conn->query($sql3);
+// $conn->query($sql3);
 
-$infoid = $conn->query($sql4);    
-$row = mysqli_fetch_array($infoid); 
-// $id = $row['MAX(Info_Id)'];
+// $infoid = $conn->query($sql4);    
+// $row = mysqli_fetch_array($infoid); 
+// // $id = $row['MAX(Info_Id)'];
 
-if ($conn->query($sql5) === TRUE) 
-{
-//echo "New record created successfully<BR><BR><BR>";
-echo "<script LANGUAGE='JavaScript'>
-window.alert('Successfully Registered as Volunteer');
-window.location. href='http://localhost:3307/Altruists/careers.html';
-</script>";
-} 
-else 
-{
-  // echo "Error: " . $sql . "<br>" . $conn->error;
-  echo "<script LANGUAGE='JavaScript'>
-window.alert('Volunteer Registration Unuccessfully');
-window.location. href='http://localhost:3307/Altruists/careers.html';
-</script>";
-}
+// if ($conn->query($sql5) === TRUE) 
+// {
+// //echo "New record created successfully<BR><BR><BR>";
+// echo "<script LANGUAGE='JavaScript'>
+// window.alert('Successfully Registered as Volunteer');
+// window.location. href='http://localhost:3307/Altruists/careers.html';
+// </script>";
+// } 
+// else 
+// {
+//   // echo "Error: " . $sql . "<br>" . $conn->error;
+//   echo "<script LANGUAGE='JavaScript'>
+// window.alert('Volunteer Registration Unuccessfully');
+// window.location. href='http://localhost:3307/Altruists/careers.html';
+// </script>";
+// }
 $conn->close();
