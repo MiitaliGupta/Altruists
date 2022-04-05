@@ -66,5 +66,3 @@ window.location. href='http://localhost:3307/Altruists/careers.html';
 </script>";
 }
 $conn->close();
-
-//Debugged by Vaibhav Gupta
