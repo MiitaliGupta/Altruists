@@ -12,12 +12,10 @@ $city=$_POST["city"];
 $state=$_POST["state"];
 $pin=$_POST["pin"];
 
-$clg=$_POST["clg"];
-$deg=$_POST["deg"];
-$year=$_POST["year"];
-$percent=$_POST["percent"];
-
-$bid=$_POST['bid'];
+$mname=$_POST["mname"];
+$msal=$_POST["msal"];
+$fname=$_POST["fname"];
+$fsal=$_POST["fsal"];
 
 $addid = "";
 $infoid = "";
@@ -45,22 +43,22 @@ $row = $result->fetch_assoc();
 $id = $row['MAX(Info_Id)'];
 echo $id;
 
-$sql5 = "INSERT INTO Employee(Job_Id,Info_Id,School_College,Degree,Years,Result) VALUES ('$bid','$id','$clg','$deg','$year','$percent')";
+$sql5 = "INSERT INTO Student(Info_Id,MotherName,MotherSalary,FatherName,FatherSalary) VALUES ('$id','$mname','$msal','$fname','$fsal')";
 
 if ($conn->query($sql5) === TRUE) 
 {
 //echo "New record created successfully<BR><BR><BR>";
 echo "<script LANGUAGE='JavaScript'>
-window.alert('Successfully Registered as Employee');
-window.location. href='http://localhost:3307/Altruists/employee.html';
+window.alert('Successfully Registered as Student');
+window.location. href='http://localhost:3307/Altruists/student.html';
 </script>";
 } 
 else 
 {
   // echo "Error: " . $sql . "<br>" . $conn->error;
   echo "<script LANGUAGE='JavaScript'>
-window.alert('Employee Registration Unuccessfully');
-window.location. href='http://localhost:3307/Altruists/employee.html';
+window.alert('Student Registration Unuccessfully');
+window.location. href='http://localhost:3307/Altruists/student.html';
 </script>";
 }
 $conn->close();

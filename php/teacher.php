@@ -16,8 +16,12 @@ $clg=$_POST["clg"];
 $deg=$_POST["deg"];
 $year=$_POST["year"];
 $percent=$_POST["percent"];
+$exp=$_POST["exp"];
 
-$bid=$_POST['bid'];
+$sub1=$_POST["sub1"];
+$sub2=$_POST["sub2"];
+$cl1=$_POST["cl1"];
+$cl2=$_POST["cl2"];
 
 $addid = "";
 $infoid = "";
@@ -45,22 +49,22 @@ $row = $result->fetch_assoc();
 $id = $row['MAX(Info_Id)'];
 echo $id;
 
-$sql5 = "INSERT INTO Employee(Job_Id,Info_Id,School_College,Degree,Years,Result) VALUES ('$bid','$id','$clg','$deg','$year','$percent')";
+$sql5 = "INSERT INTO Teacher(Info_Id,TotalExp,Subject1,Class1,Subject2,Class2,School_College,Degree,Years,Result) VALUES ('$id','$exp','$sub1','$cl1','$sub2','$cl2','$clg','$deg','$year','$percent')";
 
 if ($conn->query($sql5) === TRUE) 
 {
 //echo "New record created successfully<BR><BR><BR>";
 echo "<script LANGUAGE='JavaScript'>
-window.alert('Successfully Registered as Employee');
-window.location. href='http://localhost:3307/Altruists/employee.html';
+window.alert('Successfully Registered as Teacher');
+window.location. href='http://localhost:3307/Altruists/teacher.html';
 </script>";
 } 
 else 
 {
   // echo "Error: " . $sql . "<br>" . $conn->error;
   echo "<script LANGUAGE='JavaScript'>
-window.alert('Employee Registration Unuccessfully');
-window.location. href='http://localhost:3307/Altruists/employee.html';
+window.alert('Teacher Registration Unuccessfully');
+window.location. href='http://localhost:3307/Altruists/teacher.html';
 </script>";
 }
 $conn->close();
