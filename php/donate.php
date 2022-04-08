@@ -45,15 +45,15 @@ $id = $row['MAX(Add_Id)'];
 
 if($upi!=NULL)
 {
-  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PANNo,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod','$upi',NULL,NULL,NULL,NULL,NULL)";
+  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PAN,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod','$upi',NULL,NULL,NULL,NULL,NULL)";
 }
 else if($card != NULL)
 {
-  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PANNo,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod',NULL,NULL,NULL,NULL,'$card','$cvv')";
+  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PAN,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod',NULL,NULL,NULL,NULL,'$card','$cvv')";
 }
 else
 {
-  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PANNo,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod',NULL,'$acc','$bank','$ifsc',NULL,NULL)";
+  $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PAN,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod',NULL,'$acc','$bank','$ifsc',NULL,NULL)";
 }
 
 if ($conn->query($sql3) === TRUE) 
