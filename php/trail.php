@@ -63,6 +63,7 @@ echo "<script LANGUAGE='JavaScript'>
 alert('Donation Successful');
 window.location. href='http://localhost:3307/Altruists/trail.html';
 </script>";
+
 } 
 else 
 {
