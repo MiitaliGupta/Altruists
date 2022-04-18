@@ -74,3 +74,4 @@ window.location. href='http://localhost:3307/Altruists/trail.html';
 </script>";
 }
 $conn->close();
+?>
