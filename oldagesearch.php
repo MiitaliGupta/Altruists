@@ -37,9 +37,9 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img id="logo" src="images/WLogo.png" alt="picture of the logo"
+      <a class="navbar-brand" href="index.html"><img id="logo" src="images/WLogo.png" alt="ALTRUISTS"
           width="120" height="80"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@
               </li>
               <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
               <li><a class="dropdown-item" href="oldage.html">Old Age Home Registration</a></li>
-              <li><a class="dropdown-item" href="oldagesearch.html">Old Age Home Admission</a></li>
+              <li><a class="dropdown-item" href="oldagesearch.html">Find an Old Age Home</a></li>
             </ul>
           </li>
           <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
@@ -80,8 +80,7 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <!-- END nav -->
+  </nav><!-- END nav -->
 
   <div class="hero-wrap" style="background-image: url('images/bg_6.jpg'); height: 100vh;"
     data-stellar-background-ratio="0.5">
