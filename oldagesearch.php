@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+
+
+<html>
 
 <head>
   <title>Altruists | Donate</title>
@@ -84,8 +87,9 @@
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
           <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a
-                href="index.html">Home</a></span> <span>Donate</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Donations</h1>
+                href="index.html">Home</a></span> <span>Search</span></p>
+          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Old Age Home Search
+            Portal</h1>
         </div>
       </div>
     </div>
@@ -95,85 +99,104 @@
 
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
-    <form name="MyForm" action="php/donate.php" class="volunter-form container" method="post"onsubmit="return validateForm()">
+    <form name="MyForm" action="oldagesearch.php" class="volunter-form container" method="post"
+      onsubmit="return validateForm()">
       <div class="row d-md-flex">
 
-        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
-          <h1 class="mb-3" style="color:white;">Donate Now!</h1>
+
+      <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+          <div class="form-group">
+            <div class="form-group">
+              <div class="form-control" style="font-size: 1.5em;">
+                Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
+
+                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required
+                    onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
+                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other"
+                    onclick="clickevent3()">&nbsp;Speciality</label>
+              </div>
+            </div>
+          </div>
+
+         
+        </div>
+
+
+
+
+        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+          <div class="form-group">
+            <div id="text1"></div>
+          </div>
+          <div id="text5"></div>
           
+        </div>
 
+        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Business Name" name="bname">
+            <table style="border: 1px solid white; width: 100%;">
+
+              <thead>
+                <tr>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">ID</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Name</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Email</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Contact Number</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Availibility</td>
+                  <th style="border: 1px solid white; color: white;  text-align: center;">Speciality</td>
+                </tr>
+
+              </thead>
+
+              <tbody style = "color : white;" id = "table1" >
+              
+              
+              
+              <?php
+
+              
+$name=$_POST["name1"];
+
+
+$conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
+
+$sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE Speciality LIKE '%$name%';";
+$sql2 = "SELECT MAX(Add_Id) FROM Address";
+
+$result = $conn->query($sql1);
+
+if ($result->num_rows > 0) 
+{
+  
+  while($row = $result->fetch_assoc())
+ {
+     
+      
+
+      echo "<tr>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Home_Id"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["HomeName"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Email"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["ContactNo"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Availability"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Speciality"]."</td>
+                </tr>
+
+                ";
+ }
+} 
+
+?>
+
+              </tbody>
+
+            </table>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Name" name="name">
-          </div>
-          <div class="form-group">
-            <div class="form-control">
-              Select Gender:&nbsp;
-              <label><input type="radio" name="gender" value="male" required>&nbsp;Male</label>&nbsp;&nbsp;
-              <label><input type="radio" name="gender" value="female">&nbsp;Female</label>&nbsp;&nbsp;
-              <label><input type="radio" name="gender" value="other">&nbsp;Other</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Email" name="email">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Contact Number" name="number">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your PAN" name="pan">
-          </div>
-          <div class="form-control" Style="Border:none;">Your Donation : </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Amount in INR" name="amt">
-          </div>
-          <div class="form-group" id="text1"></div>
-          <div class="form-group" id="text3"></div>
         </div>
 
 
-        <div class=" col col-md-6 pl-md-5  volunteer ftco-animate order-last">
-          <br><br><br>
-          <div class="form-control" Style="Border:none; padding-bottom: 65px;">Your Address : </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Line 1" name="line1">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Line 2" name="line2">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="City" name="city">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="State" name="state">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="PIN" name="pin">
-          </div>
-
-
-
-          <div class="form-control" Style="Border:none;"></div>
-          <div class="form-group">
-            <div class="form-control">
-              Payment Method:&nbsp;
-              <label><input type="radio" name="payment" value="UPI" required
-                  onclick="clickevent1()">&nbsp;UPI</label>&nbsp;&nbsp;
-              <label><input type="radio" name="payment" value="Card"
-                  onclick="clickevent2()">&nbsp;Card</label>&nbsp;&nbsp;
-              <label><input type="radio" name="payment" value="Bank Transfer" onclick="clickevent3()">&nbsp;NEFT/RTGS</label>
-            </div>
-          </div>
-          <div class="form-group" id="text2"></div>
-
-
-          <div class="form-group">
-            <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
-            <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
-          </div>
-        </div>
       </div>
     </form>
 
@@ -342,29 +365,25 @@
 </body>
 
 </html>
-
+<input type="submit" value="Apply" class="btn btn-white py-3 px-5">
 
 
 <script>
 
   function clickevent1() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"UPI ID\" name=\"upiid\">";
-    document.getElementById("text2").innerHTML = "";
-    document.getElementById("text3").innerHTML = "";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Name\" name=\"name\">";
+    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
   }
 
   function clickevent2() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Card Number\" name=\"cardnum\">";
-    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"CVV\" name=\"cvvnum\">";
-    document.getElementById("text3").innerHTML = "";
-
-  }
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"PIN Code\" name=\"name\">";
+    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+}
 
   function clickevent3() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Bank Name\" name=\"bankname\">";
-    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Account Number Number\" name=\"accnum\">";
-    document.getElementById("text3").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"IFSC Code\" name=\"ifsccode\">";
-  }
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Speciality\" name=\"name\">";
+    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+}
 
   function validateForm() {
     if (document.forms["MyForm"]["bname"].value == "") {
@@ -384,8 +403,8 @@
       return false;
     }
     if (document.forms["MyForm"]["PAN"].value == "") {
-        document.getElementById("div1").innerHTML = "*Please Enter Your PAN";
-        return false;
+      document.getElementById("div1").innerHTML = "*Please Enter Your PAN";
+      return false;
     }
     if (document.forms["MyForm"]["state"].value == "") {
       document.getElementById("div1").innerHTML = "*Please Enter Your State";
@@ -405,11 +424,11 @@
     }
     if (document.forms["MyForm"]["line2"].value == "") {
       document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
-        return false;
+      return false;
     }
     if (document.forms["MyForm"]["pin"].value == "") {
-        document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
-        return false;
+      document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
+      return false;
     }
   }
 
