@@ -157,6 +157,7 @@
               
               
               <?php
+              error_reporting(E_ERROR | E_PARSE);
 
               
 $name=$_POST["name1"];
