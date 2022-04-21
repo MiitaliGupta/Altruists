@@ -123,10 +123,10 @@
               <div class="form-control" style="font-size: 1.5em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
 
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1.25em;"><input type="radio" name="name" value="name2" required onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
                 <!-- <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
                     onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp; -->
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other" onclick="clickevent3()">&nbsp;Speciality</label>
+                <label style="font-size: 1.25em;"><input type="radio" name="name" value="spec" onclick="clickevent3()">&nbsp;Speciality</label>
               </div>
             </div>
           </div>
@@ -169,15 +169,15 @@
 
 
                 $name = $_POST["name1"];
-                $name2 = $_POST["name2"];
+                $sea = $_POST["name"];
                 // $pin1=$_POST["pin1"];
-                $spec1 = $_POST["spec1"];
+                // $spec1 = $_POST["name"];
 
 
 
                 $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                if ($name2 != NULL) {
+                if ($sea=='name2') {
                   $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE HomeName LIKE '%$name%';";
                 }
 
@@ -186,7 +186,7 @@
                 //   $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE HomeName LIKE '%$name%';";
                 // }
 
-                if ($spec1 != NULL) {
+                if ($sea=='spec') {
                   $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE Speciality LIKE '%$name%';";
                 }
 
@@ -411,14 +411,14 @@
   }
 
   function clickevent2() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"PIN Code\" name=\"name\">";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"PIN Code\" name=\"name1\">";
     // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
     document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   
   }
 
   function clickevent3() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Speciality\" name=\"name\">";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Speciality\" name=\"name1\">";
     // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
     document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
