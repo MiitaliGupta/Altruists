@@ -112,15 +112,15 @@
       <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
           <div class="form-group">
             <div class="form-group">
-              <div class="form-control" style="font-size: 1.5em;">
+              <div class="form-control" style="font-size: 1.35em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
 
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required
-                    onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
-                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other"
-                    onclick="clickevent3()">&nbsp;Speciality</label>
+                <label style="font-size: 1em;"><input type="radio" name="gender" value="male" required
+                    onclick="clickevent1()">&nbsp;Salary</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1em;"><input type="radio" name="gender" value="female"
+                    onclick="clickevent2()">&nbsp;Working Hours</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1em;"><input type="radio" name="gender" value="other"
+                    onclick="clickevent3()">&nbsp;Required Qualifications</label>
               </div>
             </div>
           </div>
@@ -145,12 +145,16 @@
 
               <thead>
                 <tr>
-                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">ID</td>
-                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Name</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Id</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Business Name</td>
                   <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Email</td>
                   <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Contact Number</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Designation</td>
                   <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Availibility</td>
-                  <th style="border: 1px solid white; color: white;  text-align: center;">Speciality</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Working Hours</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Salary</td>
+                  <th style="border: 1px solid white; color: white; width: 16.6%; text-align: center;">Required_Qual</td>
+                  <th style="border: 1px solid white; color: white;  text-align: center;">Job Desc</td>
                 </tr>
 
               </thead>
@@ -168,7 +172,7 @@ $name=$_POST["name1"];
 
 $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
 
-$sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE Speciality LIKE '%$name%';";
+$sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
 $sql2 = "SELECT MAX(Add_Id) FROM Address";
 
 $result = $conn->query($sql1);
@@ -182,12 +186,16 @@ if ($result->num_rows > 0)
       
 
       echo "<tr>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Home_Id"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["HomeName"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Id"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["BusinessName"]."</td>
                   <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Email"]."</td>
                   <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["ContactNo"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Designation"]."</td>
                   <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Availability"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Speciality"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["WorkingHours"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Salary"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Required_Qual"]."</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["JobDesc"]."</td>
                 </tr>
 
                 ";
@@ -201,7 +209,7 @@ if ($result->num_rows > 0)
             </table>
             <br>
             <div>
-            <a href = "patient.html"><input type="button" value="Apply to Old Age Home"class="btn btn-white py-3 px-5" style = "padding-top:20px" ></a>
+            <a href = ""><input type="button" value="Apply for Job Search"class="btn btn-white py-3 px-5" style = "padding-top:20px" ></a>
 </div>
           </div>
         </div>
