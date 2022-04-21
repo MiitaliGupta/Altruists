@@ -96,7 +96,7 @@
     </div>
   </nav><!-- END nav -->
 
-  <div class="hero-wrap" style="background-image: url('images/bg_6.jpg'); height: 100vh;" data-stellar-background-ratio="0.5">
+  <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -234,7 +234,7 @@
             </table>
             <br>
             <div>
-              <a href=""><input type="button" value="Apply for Job" class="btn btn-white py-3 px-5" style="padding-top:20px"></a>
+              <a href="employee.html"><input type="button" value="Apply for Job" class="btn btn-white py-3 px-5" style="padding-top:20px"></a>
             </div>
           </div>
         </div>
