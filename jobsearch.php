@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Altruists | Donate</title>
+  <title>Altruists | Search Portal</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +112,7 @@
 
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
-    <form name="MyForm" action="oldagesearch.php" class="volunter-form container" method="post" onsubmit="return validateForm()">
+    <form name="MyForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="volunter-form container" method="post" onsubmit="return validateForm()">
       <div class="row d-md-flex">
 
 
@@ -181,21 +181,28 @@
 
                 // $sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
                 if ($sal1 != NULL) {
-                  $sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Salary = $name;";
+                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Salary ='$name';";
                 }
 
                 if ($qual1 != NULL) {
-                  $sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
+                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
                 }
 
                 if ($work1 != NULL) {
-                  $sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where WorkingHours like '%$name%';";
+                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where WorkingHours ='$name';";
                 }
 
 
                 $sql2 = "SELECT MAX(Add_Id) FROM Address";
 
+                if($conn->query($sql1))
+                {
+                  echo "yes";
+                }
+
                 $result = $conn->query($sql1);
+
+
 
                 if ($result->num_rows > 0) {
 
@@ -409,63 +416,66 @@
 <script>
   function clickevent1() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Salary\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function clickevent2() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Working Hours\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function clickevent3() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Required Qualifications\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function validateForm() {
-    if (document.forms["MyForm"]["bname"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Business Name";
-      return false;
-    }
-    if (document.forms["MyForm"]["name"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter You Name";
-      return false;
-    }
-    if (document.forms["MyForm"]["email"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your Email";
-      return false;
-    }
-    if (document.forms["MyForm"]["number"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your Number";
-      return false;
-    }
-    if (document.forms["MyForm"]["PAN"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your PAN";
-      return false;
-    }
-    if (document.forms["MyForm"]["state"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your State";
-      return false;
-    }
-    if (document.forms["MyForm"]["city"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your City";
-      return false;
-    }
-    if (document.forms["MyForm"]["amt"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter The Amount";
-      return false;
-    }
-    if (document.forms["MyForm"]["line1"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Line 1 Address";
-      return false;
-    }
-    if (document.forms["MyForm"]["line2"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
-      return false;
-    }
-    if (document.forms["MyForm"]["pin"].value == "") {
-      document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
-      return false;
-    }
+    // if (document.forms["MyForm"]["bname"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Business Name";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["name"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter You Name";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["email"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your Email";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["number"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your Number";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["PAN"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your PAN";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["state"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your State";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["city"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your City";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["amt"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter The Amount";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["line1"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Line 1 Address";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["line2"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
+    //   return false;
+    // }
+    // if (document.forms["MyForm"]["pin"].value == "") {
+    //   document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
+    //   return false;
+    // }
   }
 </script>
