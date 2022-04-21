@@ -111,11 +111,11 @@
               <div class="form-control" style="font-size: 1.5em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
 
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required
+                <label style="font-size: 1.25em;"><input type="radio" name="name2" value="male"
                     onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
-                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other"
+                <!-- <label style="font-size: 1.25em;"><input type="radio" name="pin1" value="female"
+                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp; -->
+                <label style="font-size: 1.25em;"><input type="radio" name="spec1" value="other"
                     onclick="clickevent3()">&nbsp;Speciality</label>
               </div>
             </div>
@@ -306,25 +306,30 @@
 </body>
 
 </html>
-<input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+<!-- <div>
+  <a href = "oldagesearch.html"><input type="button" value="Search"class="btn btn-white py-3 px-5" style = "padding-top:20px" ></a>
+</div> -->
 
 
 <script>
 
   function clickevent1() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Name\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function clickevent2() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"PIN Code\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
-}
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
+  }
 
   function clickevent3() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Speciality\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
-}
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
+  }
 
   function validateForm() {
     if (document.forms["MyForm"]["bname"].value == "") {

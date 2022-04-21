@@ -1,7 +1,3 @@
-
-
-
-
 <html>
 
 <head>
@@ -31,21 +27,37 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
 
-  
-<script type='text/javascript'>
-		(function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'waaQiRek4D6HRgMqq_c', {});
-</script>
+
+  <script type='text/javascript'>
+    (function(I, L, T, i, c, k, s) {
+      if (I.iticks) return;
+      I.iticks = {
+        host: c,
+        settings: s,
+        clientId: k,
+        cdn: L,
+        queue: []
+      };
+      var h = T.head || T.documentElement;
+      var e = T.createElement(i);
+      var l = I.location;
+      e.async = true;
+      e.src = (L || c) + '/client/inject-v2.min.js';
+      h.insertBefore(e, h.firstChild);
+      I.iticks.call = function(a, b) {
+        I.iticks.queue.push([a, b]);
+      };
+    })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'waaQiRek4D6HRgMqq_c', {});
+  </script>
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img id="logo" src="images/WLogo.png" alt="ALTRUISTS"
-          width="120" height="80"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html"><img id="logo" src="images/WLogo.png" alt="ALTRUISTS" width="120" height="80"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
@@ -53,8 +65,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Services
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -85,14 +96,12 @@
     </div>
   </nav><!-- END nav -->
 
-  <div class="hero-wrap" style="background-image: url('images/bg_6.jpg'); height: 100vh;"
-    data-stellar-background-ratio="0.5">
+  <div class="hero-wrap" style="background-image: url('images/bg_6.jpg'); height: 100vh;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a
-                href="index.html">Home</a></span> <span>Search</span></p>
+          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Search</span></p>
           <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Old Age Home Search
             Portal</h1>
         </div>
@@ -104,28 +113,25 @@
 
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
-    <form name="MyForm" action="oldagesearch.php" class="volunter-form container" method="post"
-      onsubmit="return validateForm()">
+    <form name="MyForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="volunter-form container" method="post" onsubmit="return validateForm()">
       <div class="row d-md-flex">
 
 
-      <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
           <div class="form-group">
             <div class="form-group">
               <div class="form-control" style="font-size: 1.5em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
 
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required
-                    onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
-                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other"
-                    onclick="clickevent3()">&nbsp;Speciality</label>
+                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="male" required onclick="clickevent1()">&nbsp;Name</label>&nbsp;&nbsp; &nbsp;
+                <!-- <label style="font-size: 1.25em;"><input type="radio" name="gender" value="female"
+                    onclick="clickevent2()">&nbsp;PIN Code</label>&nbsp;&nbsp; &nbsp; -->
+                <label style="font-size: 1.25em;"><input type="radio" name="gender" value="other" onclick="clickevent3()">&nbsp;Speciality</label>
               </div>
             </div>
           </div>
 
-         
+
         </div>
 
 
@@ -136,12 +142,12 @@
             <div id="text1"></div>
           </div>
           <div id="text5"></div>
-          
+
         </div>
 
         <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
           <div class="form-group">
-            <table style="border: 1px solid white; width: 100%;" cellpadding = "13">
+            <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
               <thead>
                 <tr>
@@ -155,54 +161,68 @@
 
               </thead>
 
-              <tbody style = "color : white;" id = "table1" >
-              
-              
-              
-              <?php
-              error_reporting(E_ERROR | E_PARSE);
-
-              
-$name=$_POST["name1"];
+              <tbody style="color : white;" id="table1">
 
 
-$conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
+                <?php
+                error_reporting(E_ERROR | E_PARSE);
 
-$sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE Speciality LIKE '%$name%';";
-$sql2 = "SELECT MAX(Add_Id) FROM Address";
 
-$result = $conn->query($sql1);
+                $name = $_POST["name1"];
+                $name2 = $_POST["name2"];
+                // $pin1=$_POST["pin1"];
+                $spec1 = $_POST["spec1"];
 
-if ($result->num_rows > 0) 
-{
-  
-  while($row = $result->fetch_assoc())
- {
-     
-      
 
-      echo "<tr>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Home_Id"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["HomeName"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Email"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["ContactNo"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Availability"]."</td>
-                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">".$row["Speciality"]."</td>
+
+                $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
+
+                if ($name2 != NULL) {
+                  $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE HomeName LIKE '%$name%';";
+                }
+
+
+                // if($pin1!=NULL){
+                //   $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE HomeName LIKE '%$name%';";
+                // }
+
+                if ($spec1 != NULL) {
+                  $sql1 = "SELECT Home_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome WHERE Speciality LIKE '%$name%';";
+                }
+
+
+                $sql2 = "SELECT MAX(Add_Id) FROM Address";
+
+                $result = $conn->query($sql1);
+
+                if ($result->num_rows > 0) {
+
+                  while ($row = $result->fetch_assoc()) {
+
+
+
+                    echo "<tr>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Home_Id"] . "</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["HomeName"] . "</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Email"] . "</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["ContactNo"] . "</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Availability"] . "</td>
+                  <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Speciality"] . "</td>
                 </tr>
 
                 ";
- }
-} 
+                  }
+                }
 
-?>
+                ?>
 
               </tbody>
 
             </table>
             <br>
             <div>
-            <a href = "patient.html"><input type="button" value="Apply to Old Age Home"class="btn btn-white py-3 px-5" style = "padding-top:20px" ></a>
-</div>
+              <a href="patient.html"><input type="button" value="Apply to Old Age Home" class="btn btn-white py-3 px-5" style="padding-top:20px"></a>
+            </div>
           </div>
         </div>
 
@@ -275,8 +295,7 @@ if ($result->num_rows > 0)
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
               <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Services
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -326,7 +345,9 @@ if ($result->num_rows > 0)
           <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | Altruists
+            <script>
+              document.write(new Date().getFullYear());
+            </script> All rights reserved | Altruists
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
@@ -339,8 +360,7 @@ if ($result->num_rows > 0)
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
       <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#F96D00" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
     </svg></div>
 
 
@@ -358,12 +378,14 @@ if ($result->num_rows > 0)
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script>
-    window.onscroll = function () { logo() };
+    window.onscroll = function() {
+      logo()
+    };
+
     function logo() {
       if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350)
         document.getElementById('logo').src = 'images/Blogo.png'
@@ -375,25 +397,31 @@ if ($result->num_rows > 0)
 </body>
 
 </html>
-<input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+<!-- <div>
+  <a href = "oldagesearch.html"><input type="button" value="Search"class="btn btn-white py-3 px-5" style = "padding-top:20px" ></a>
+</div> -->
 
 
 <script>
-
   function clickevent1() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Name\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Name\" name=\"name1\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
+    // document.getElementById("text5").innerHTML = "<input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" onclick=\"<script>window.open('oldagesearch.php,'_self')<\\script>\" >;";
   }
 
   function clickevent2() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"PIN Code\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
-}
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
+  
+  }
 
   function clickevent3() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Speciality\" name=\"name\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
-}
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"oldagesearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
+  }
 
   function validateForm() {
     if (document.forms["MyForm"]["bname"].value == "") {
@@ -441,9 +469,4 @@ if ($result->num_rows > 0)
       return false;
     }
   }
-
-
-
-
-
 </script>
