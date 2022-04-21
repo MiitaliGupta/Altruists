@@ -108,11 +108,11 @@
             <div class="form-group">
               <div class="form-control" style="font-size: 1.45em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
-                <label style="font-size: 1em;"><input type="radio" name="sal1" value="male" required
+                <label style="font-size: 1em;"><input type="radio" name="job" value="sal" required
                     onclick="clickevent1()">&nbsp;Salary</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1em;"><input type="radio" name="work1" value="female"
+                <label style="font-size: 1em;"><input type="radio" name="job" value="work"
                     onclick="clickevent2()">&nbsp;WorkingHours </label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1em;"><input type="radio" name="qual1" value="other"
+                <label style="font-size: 1em;"><input type="radio" name="job" value="qual"
                     onclick="clickevent3()">&nbsp;Required Qualification</label>
               </div>
             </div>
@@ -124,13 +124,20 @@
 
 
 
-        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
           <div class="form-group">
             <div id="text1"></div>
           </div>
-          <div id="text5"></div>
-          
         </div>
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+          <div class="form-group">
+            <div id="text2"></div>
+          </div>
+        </div>
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+          <div id="text5"></div>
+        </div>
+          
 
 
       </div>
@@ -307,18 +314,24 @@
 <script>
 
   function clickevent1() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Salary\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Lower Limit in INR\" name=\"name1\">";
+    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Upper Limit in INR\" name=\"name11\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function clickevent2() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Working Hours\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Lower Limit in Hours\" name=\"name1\">";
+    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Upper Limit in Hours\" name=\"name11\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
 }
 
   function clickevent3() {
     document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Required Qualification\" name=\"name1\">";
-    document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
+    document.getElementById("text2").innerHTML = "";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">"; 
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;"; 
 }
 
   function validateForm() {

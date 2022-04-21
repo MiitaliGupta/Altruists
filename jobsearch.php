@@ -122,26 +122,34 @@
               <div class="form-control" style="font-size: 1.35em;">
                 Which Search Option Would You Like To Use? &nbsp; &nbsp; &nbsp;
 
-                <label style="font-size: 1em;"><input type="radio" name="gender" value="male" required onclick="clickevent1()">&nbsp;Salary</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1em;"><input type="radio" name="gender" value="female" onclick="clickevent2()">&nbsp;Working Hours</label>&nbsp;&nbsp; &nbsp;
-                <label style="font-size: 1em;"><input type="radio" name="gender" value="other" onclick="clickevent3()">&nbsp;Required Qualifications</label>
+                <label style="font-size: 1em;"><input type="radio" name="job" value="sal" required onclick="clickevent1()">&nbsp;Salary</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1em;"><input type="radio" name="job" value="work" onclick="clickevent2()">&nbsp;Working Hours</label>&nbsp;&nbsp; &nbsp;
+                <label style="font-size: 1em;"><input type="radio" name="job" value="qual"
+                    onclick="clickevent3()">&nbsp;Required Qualification</label>
               </div>
             </div>
           </div>
-
-
         </div>
 
 
 
 
-        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+
+
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
           <div class="form-group">
             <div id="text1"></div>
           </div>
-          <div id="text5"></div>
-
         </div>
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+          <div class="form-group">
+            <div id="text2"></div>
+          </div>
+        </div>
+        <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+          <div id="text5"></div>
+        </div>
+          
 
         <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
           <div class="form-group">
@@ -164,49 +172,57 @@
               </thead>
 
               <tbody style="color : white;" id="table1">
+              <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
+                <div class="form-group">
+                <div id="nodata"></div>
+                </div>
+          
+        </div>
 
 
 
                 <?php
                 error_reporting(E_ERROR | E_PARSE);
 
-
                 $name = $_POST["name1"];
-                $sal1 = $_POST["sal1"];
-                $qual1 = $_POST["qual1"];
-                $work1 = $_POST["work1"];
+                $upper = $_POST["name11"];
+                $sea = $_POST["job"];
+
+                if($name=="")
+                $name = 0;
+                if($upper=="")
+                $upper = 999999999999999;
 
 
                 $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                // $sql1 = "Select Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
-                if ($sal1 != NULL) {
-                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Salary ='$name';";
+              
+                if ($sea == 'sal') {
+
+                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Salary >='$name' AND Salary<='$upper';";
                 }
 
-                if ($qual1 != NULL) {
+                if ($sea == 'qual') {
                   $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where Required_Qual like '%$name%';";
                 }
 
-                if ($work1 != NULL) {
-                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where WorkingHours ='$name';";
+                if ($sea == 'work') {
+
+                  $sql1 = "SELECT Id, BusinessName, Email, ContactNo, Designation, Availability, WorkingHours, Salary, Required_Qual, JobDesc from Employer Where WorkingHours >='$name' AND WorkingHours<='$upper';";
                 }
 
 
                 $sql2 = "SELECT MAX(Add_Id) FROM Address";
 
-                if($conn->query($sql1))
-                {
-                  echo "yes";
-                }
-
                 $result = $conn->query($sql1);
 
 
 
-                if ($result->num_rows > 0) {
+                if ($result->num_rows > 0)
+                 {
 
-                  while ($row = $result->fetch_assoc()) {
+                  while ($row = $result->fetch_assoc()) 
+                  {
 
 
 
@@ -226,7 +242,7 @@
                 ";
                   }
                 }
-
+                
                 ?>
 
               </tbody>
@@ -414,23 +430,26 @@
 
 
 <script>
-  function clickevent1() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Salary\" name=\"name\">";
+ function clickevent1() {
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Lower Limit in INR\" name=\"name1\">";
+    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Upper Limit in INR\" name=\"name11\">";
     // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
     document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
   }
 
   function clickevent2() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Working Hours\" name=\"name\">";
-    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Lower Limit in Hours\" name=\"name1\">";
+    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Upper Limit in Hours\" name=\"name11\">";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";  
     document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
-  }
+}
 
   function clickevent3() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Required Qualifications\" name=\"name\">";
-    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
-    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;";
-  }
+    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Required Qualification\" name=\"name1\">";
+    document.getElementById("text2").innerHTML = "";
+    // document.getElementById("text5").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">"; 
+    document.getElementById("text5").innerHTML = "<a href = \"jobsearch.php\"><input type=\"Submit\" value=\"Search\"class=\"btn btn-white py-3 px-5\" style = \"padding-top:20px\" ></a>;"; 
+}
 
   function validateForm() {
     // if (document.forms["MyForm"]["bname"].value == "") {
