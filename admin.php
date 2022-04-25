@@ -32,7 +32,10 @@
         // else if($file == 'personal')
         // else if($file == 'stu')
         // else if($file == 'tea')
-        // else if($file == 'vol')
+        else if($file == 'vol')
+        {
+          include 'php/print_volunteer.php';
+        }
         // else if($file == 'user')
 
 ?>
