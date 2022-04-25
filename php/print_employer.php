@@ -101,41 +101,40 @@
         <div class="overlay"></div>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <div class="row d-md-flex">
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                    <div class="form-group" style="font-size: 1.35em; color:white;">
-
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="academic">&nbsp;Academic Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="address">&nbsp;Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="contact">&nbsp;Contact Us</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="donor">&nbsp;Donation Details</label>
-
-                    </div>
+            <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                <div class="form-group" style="font-size: 1.35em; color:white;">
+  
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="academic">&nbsp;Academic Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="address">&nbsp;Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="contact">&nbsp;Contact Us</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="donor">&nbsp;Donation Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="empee">&nbsp;Employee Details</label>
+                  
                 </div>
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                    <div class="form-group" style="font-size: 1.35em; color:white;">
-
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="empee">&nbsp;Employee Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="emper">&nbsp;Employer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="oldage">&nbsp;Old Age Homes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="patient">&nbsp;Patient Details</label>
-
-                    </div>
+          </div>
+        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                <div class="form-group" style="font-size: 1.35em; color:white;">
+  
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="emper">&nbsp;Employer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="oldage">&nbsp;Old Age Homes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="patient">&nbsp;Patient Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="font-size: 1em;"><input type="radio" name="db" value="personal">&nbsp;Personal Information</label>
+                  
                 </div>
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                    <div class="form-group" style="font-size: 1.35em; color:white;">
-
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="personal">&nbsp;Personal Information</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="stu">&nbsp;Student Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="tea">&nbsp;Teacher Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="vol">&nbsp;Volunteer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label style="font-size: 1em;"><input type="radio" name="db" value="user">&nbsp;User</label>
-
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
-                    </div>
+          </div>
+        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                <div class="form-group" style="font-size: 1.35em; color:white;">
+  
+                    <label style="font-size: 1em;"><input type="radio" name="db" value="stu">&nbsp;Student Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label style="font-size: 1em;"><input type="radio" name="db" value="tea">&nbsp;Teacher Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label style="font-size: 1em;"><input type="radio" name="db" value="vol">&nbsp;Volunteer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label style="font-size: 1em;"><input type="radio" name="db" value="user">&nbsp;User</label>
+                  
                 </div>
-
+                <div class="form-group">
+                  <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                </div>
+          </div>
                 <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
                     <div class="form-group">
                         <table style="border: 1px solid white; width: 100%;" cellpadding="13">
