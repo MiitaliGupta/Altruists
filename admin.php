@@ -1,7 +1,12 @@
 <?php
-        //error_reporting(E_ERROR | E_PARSE);
+        error_reporting(E_ERROR | E_PARSE);
 
         $file = $_POST['db'];
+
+        if($file == '')
+        {
+          $file = 'oldage';
+        }
 
         if($file == 'academic')
         {
@@ -19,7 +24,10 @@
         {
           include 'php/print_donor.php';
         }
-        // else if($file == 'empee')
+        else if($file == 'empee')
+        {
+          include 'php/print_employee.php';
+        }
         else if($file == 'emper')
         {
           include 'php/print_employer.php';
@@ -28,7 +36,10 @@
         {
           include 'php/print_oldage.php';
         }
-        // else if($file == 'patient')
+        else if($file == 'patient')
+        {
+          include 'php/print_patient.php';
+        }
         // else if($file == 'personal')
         // else if($file == 'stu')
         // else if($file == 'tea')
