@@ -97,59 +97,57 @@
     </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh;"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a
-                href="index.html">Home</a></span> <span>Search</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">ADMIN PANEL</h1>
+    <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+                <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                    <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Search</span></p>
+                    <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">ADMIN PANEL</h1>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
 
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <div class="row d-md-flex">
-            <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                <div class="form-group" style="font-size: 1.35em; color:white;">
-  
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="academic">&nbsp;Academic Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="address">&nbsp;Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="contact">&nbsp;Contact Us</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="donor">&nbsp;Donation Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="empee">&nbsp;Employee Details</label>
-                  
+                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                    <div class="form-group" style="font-size: 1.35em; color:white;">
+
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="academic">&nbsp;Academic Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="address">&nbsp;Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="contact">&nbsp;Contact Us</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="donor">&nbsp;Donation Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="empee">&nbsp;Employee Details</label>
+
+                    </div>
                 </div>
-          </div>
-        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                <div class="form-group" style="font-size: 1.35em; color:white;">
-  
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="emper">&nbsp;Employer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="oldage">&nbsp;Old Age Homes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="patient">&nbsp;Patient Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label style="font-size: 1em;"><input type="radio" name="db" value="personal">&nbsp;Personal Information</label>
-                  
+                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                    <div class="form-group" style="font-size: 1.35em; color:white;">
+
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="emper">&nbsp;Employer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="oldage">&nbsp;Old Age Homes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="patient">&nbsp;Patient Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="personal">&nbsp;Personal Information</label>
+
+                    </div>
                 </div>
-          </div>
-        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
-                <div class="form-group" style="font-size: 1.35em; color:white;">
-  
-                    <label style="font-size: 1em;"><input type="radio" name="db" value="stu">&nbsp;Student Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label style="font-size: 1em;"><input type="radio" name="db" value="tea">&nbsp;Teacher Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label style="font-size: 1em;"><input type="radio" name="db" value="vol">&nbsp;Volunteer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label style="font-size: 1em;"><input type="radio" name="db" value="user">&nbsp;User</label>
-                  
+                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
+                    <div class="form-group" style="font-size: 1.35em; color:white;">
+
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="stu">&nbsp;Student Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="tea">&nbsp;Teacher Details</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="vol">&nbsp;Volunteer Details</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 1em;"><input type="radio" name="db" value="user">&nbsp;User</label>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
-                </div>
-          </div>
 
                 <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
                     <div class="form-group">
@@ -170,23 +168,21 @@
 
                             <tbody style="color : white;" id="table1">
 
-                            
-                            <?php
-                                
-                                    error_reporting(E_ERROR | E_PARSE);
 
-                                    $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
+                                <?php
 
-                                    $sql1 = "SELECT Home_Id,Add_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome ;";
+                                error_reporting(E_ERROR | E_PARSE);
 
-                                    $result = $conn->query($sql1);
+                                $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                                    if ($result->num_rows > 0) 
-                                    {
+                                $sql1 = "SELECT Home_Id,Add_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome ;";
 
-                                        while ($row = $result->fetch_assoc()) 
-                                        {
-                                            echo "<tr>
+                                $result = $conn->query($sql1);
+
+                                if ($result->num_rows > 0) {
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>
                                                     <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Home_Id"] . "</td>
                                                     <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Add_Id"] . "</td>
                                                     <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["HomeName"] . "</td>
@@ -195,11 +191,11 @@
                                                     <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Availability"] . "</td>
                                                     <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Speciality"] . "</td>
                                                  </tr>";
-                                        }
                                     }
-                                
+                                }
 
-                            ?>
+
+                                ?>
 
                             </tbody>
 
@@ -210,12 +206,12 @@
 
 
             </div>
-            </form>
+        </form>
 
-</div>
-</div>
-</div>
-</section>
+        </div>
+        </div>
+        </div>
+    </section>
 
 
 
