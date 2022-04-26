@@ -27,6 +27,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        th{
+            border: 2px solid white; color: white; width: auto; text-align: center;
+        }
+        td{
+            border: 1px solid white; color: white; width: auto; text-align: center;
+        }
+    </style>
+
+
 
     <script type='text/javascript'>
         (function(I, L, T, i, c, k, s) {
@@ -137,27 +147,28 @@
           </div>
 
                 <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+                <div id="tab">
                     <div class="form-group">
                         <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
                             <thead>
                                 <tr>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">ID</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Business Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Donor Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Gender</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Email</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Contact Number</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">PAN</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Date</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Amount</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Payment Type</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">UPI</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Account Number</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Bank Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">IFSC</td>
-                                    <th style="border: 1px solid white; color: white; width: 6.25%; text-align: center;">Card Number</td>
-                                    <th style="border: 1px solid white; color: white;  text-align: center;">CVV</td>
+                                    <th >ID</td>
+                                    <th >Business Name</td>
+                                    <th >Donor Name</td>
+                                    <th >Gender</td>
+                                    <th >Email</td>
+                                    <th >Contact Number</td>
+                                    <th >PAN</td>
+                                    <th >Date</td>
+                                    <th >Amount</td>
+                                    <th >Payment Type</td>
+                                    <th >UPI</td>
+                                    <th >Account Number</td>
+                                    <th >Bank Name</td>
+                                    <th >IFSC</td>
+                                    <th >Card Number</td>
+                                    <th >CVV</td>
                                 </tr>
 
                             </thead>
@@ -181,22 +192,22 @@
                                         while ($row = $result->fetch_assoc()) 
                                         {
                                             echo "<tr>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["BusinessName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["DonorName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Gender"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Email"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["ContactNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["PAN"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Date"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Amount"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["Payment_type"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["UPI_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["AccountNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["BankName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["IFSC"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["CardNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 6.25%; text-align: center;\">" . $row["CVV"] . "</td>
+                                                    <td >" . $row["Id"] . "</td>
+                                                    <td >" . $row["BusinessName"] . "</td>
+                                                    <td >" . $row["DonorName"] . "</td>
+                                                    <td >" . $row["Gender"] . "</td>
+                                                    <td >" . $row["Email"] . "</td>
+                                                    <td >" . $row["ContactNo"] . "</td>
+                                                    <td >" . $row["PAN"] . "</td>
+                                                    <td >" . $row["Date"] . "</td>
+                                                    <td >" . $row["Amount"] . "</td>
+                                                    <td >" . $row["Payment_type"] . "</td>
+                                                    <td >" . $row["UPI_Id"] . "</td>
+                                                    <td >" . $row["AccountNo"] . "</td>
+                                                    <td >" . $row["BankName"] . "</td>
+                                                    <td >" . $row["IFSC"] . "</td>
+                                                    <td >" . $row["CardNo"] . "</td>
+                                                    <td >" . $row["CVV"] . "</td>
                                                  </tr>";
                                         }
                                     }
@@ -208,6 +219,11 @@
 
                         </table>
 
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" value="Download Report" id="btPrint" onclick="createPDF()" class="btn btn-white py-3 px-5">
                     </div>
                 </div>
 
@@ -379,7 +395,31 @@
                 document.getElementById('logo').src = 'images/Wlogo.png'
         }
     </script>
+ <script>
+        function createPDF() {
+            var sTable = document.getElementById('tab').innerHTML;
 
+            var style = "<style>";
+            style = style + "table {width: 100%;font: 12px Times New Roman; color:black;text-align:left;}";
+            style = style + "table, th, td {border: solid 1px #808080 ;padding: 2px 3px; text-align:left;color:black;}";
+            style = style + "</style>";
+
+            // CREATE A WINDOW OBJECT.
+            var win = window.open('', '', 'height=600,width=600');
+
+            win.document.write('<html><head>');
+            win.document.write('<title>DONATIONS</title>'); // <title> FOR PDF HEADER.
+            win.document.write(style); // ADD STYLE INSIDE THE HEAD TAG.
+            win.document.write('</head>');
+            win.document.write('<body>');
+            win.document.write(sTable); // THE TABLE CONTENTS INSIDE THE BODY TAG.
+            win.document.write('</body></html>');
+
+            win.document.close(); // CLOSE THE CURRENT WINDOW.
+
+            win.print(); // PRINT THE CONTENTS.
+        }
+    </script>
 </body>
 
 </html>

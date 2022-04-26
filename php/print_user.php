@@ -27,6 +27,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        th{
+            border: 2px solid white; color: white; width: auto; text-align: center;
+        }
+        td{
+            border: 1px solid white; color: white; width: auto; text-align: center;
+        }
+    </style>
+
+
 
     <script type='text/javascript'>
         (function(I, L, T, i, c, k, s) {
@@ -137,13 +147,14 @@
           </div>
 
                 <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+                <div id="tab">
                     <div class="form-group">
                         <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
                             <thead>
                                 <tr>
-                                    <th style="border: 2px solid white; color: white; width: 12.5%; text-align: center;">User Id</td>
-                                    <th style="border: 2px solid white; color: white; width: 12.5%; text-align: center;">Password</td>
+                                    <th >User Id</td>
+                                    <th >Password</td>
                                     
                                 </tr>
 
@@ -169,8 +180,8 @@
                                         {
                                             header("Content-type: image/jpg"); 
                                             echo "<tr>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["User_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Password"] . "</td>
+                                                    <td >" . $row["User_Id"] . "</td>
+                                                    <td >" . $row["Password"] . "</td>
                                           
                                                  </tr>";
                                         }
@@ -182,6 +193,11 @@
 
                         </table>
 
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" value="Download Report" id="btPrint" onclick="createPDF()" class="btn btn-white py-3 px-5">
                     </div>
                 </div>
 
@@ -351,6 +367,31 @@
                 document.getElementById('logo').src = 'images/Blogo.png'
             else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350)
                 document.getElementById('logo').src = 'images/Wlogo.png'
+        }
+    </script>
+     <script>
+        function createPDF() {
+            var sTable = document.getElementById('tab').innerHTML;
+
+            var style = "<style>";
+            style = style + "table {width: 100%;font: 12px Times New Roman; color:black;text-align:left;}";
+            style = style + "table, th, td {border: solid 1px #808080 ;padding: 2px 3px; text-align:left;color:black;}";
+            style = style + "</style>";
+
+            // CREATE A WINDOW OBJECT.
+            var win = window.open('', '', 'height=600,width=600');
+
+            win.document.write('<html><head>');
+            win.document.write('<title>USER IDs and PASSWORDS</title>'); // <title> FOR PDF HEADER.
+            win.document.write(style); // ADD STYLE INSIDE THE HEAD TAG.
+            win.document.write('</head>');
+            win.document.write('<body>');
+            win.document.write(sTable); // THE TABLE CONTENTS INSIDE THE BODY TAG.
+            win.document.write('</body></html>');
+
+            win.document.close(); // CLOSE THE CURRENT WINDOW.
+
+            win.print(); // PRINT THE CONTENTS.
         }
     </script>
 

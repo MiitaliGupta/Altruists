@@ -27,6 +27,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        th{
+            border: 2px solid white; color: white; width: auto; text-align: center;
+        }
+        td{
+            border: 1px solid white; color: white; width: auto; text-align: center;
+        }
+    </style>
+
+
 
     <script type='text/javascript'>
         (function(I, L, T, i, c, k, s) {
@@ -136,22 +146,23 @@
                 </div>
           </div>
                 <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+                <div id="tab">
                     <div class="form-group">
                         <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
                             <thead>
                                 <tr>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">ID</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Employer Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Business Name</td>
-                                    <th style="border: 1px solid white; color: white; width: auto; text-align: center;">Email</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Contact Number</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Designation</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Availability</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Working Hours</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Salary</td>
-                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Required Qualification</td>
-                                    <th style="border: 1px solid white; color: white; width: auto; text-align: center;">Job Description</td>
+                                    <th >ID</td>
+                                    <th >Employer Name</td>
+                                    <th >Business Name</td>
+                                    <th >Email</td>
+                                    <th >Contact Number</td>
+                                    <th >Designation</td>
+                                    <th >Availability</td>
+                                    <th >Working Hours</td>
+                                    <th >Salary</td>
+                                    <th >Required Qualification</td>
+                                    <th >Job Description</td>
                                 </tr>
 
                             </thead>
@@ -175,17 +186,17 @@
                                         while ($row = $result->fetch_assoc()) 
                                         {
                                             echo "<tr>
-                                            <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Id"] . "</td>
-                                            <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Names"] . "</td>
-                                            <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["BusinessName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Email"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["ContactNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Designation"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Availability"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["WorkingHours"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Salary"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["Required_Qual"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["JobDesc"] . "</td>
+                                            <td >" . $row["Id"] . "</td>
+                                            <td >" . $row["Names"] . "</td>
+                                            <td >" . $row["BusinessName"] . "</td>
+                                            <td >" . $row["Email"] . "</td>
+                                            <td >" . $row["ContactNo"] . "</td>
+                                            <td >" . $row["Designation"] . "</td>
+                                            <td >" . $row["Availability"] . "</td>
+                                            <td >" . $row["WorkingHours"] . "</td>
+                                            <td >" . $row["Salary"] . "</td>
+                                            <td >" . $row["Required_Qual"] . "</td>
+                                            <td style=\"border: 1px solid white; color: white; width: 8.33%; text-align: center;\">" . $row["JobDesc"] . "</td>
                                                  </tr>";
                                         }
                                     }
@@ -197,6 +208,11 @@
 
                         </table>
 
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" value="Download Report" id="btPrint" onclick="createPDF()" class="btn btn-white py-3 px-5">
                     </div>
                 </div>
 
@@ -366,6 +382,31 @@
                 document.getElementById('logo').src = 'images/Blogo.png'
             else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350)
                 document.getElementById('logo').src = 'images/Wlogo.png'
+        }
+    </script>
+     <script>
+        function createPDF() {
+            var sTable = document.getElementById('tab').innerHTML;
+
+            var style = "<style>";
+            style = style + "table {width: 100%;font: 12px Times New Roman; color:black;text-align:left;}";
+            style = style + "table, th, td {border: solid 1px #808080 ;padding: 2px 3px; text-align:left;color:black;}";
+            style = style + "</style>";
+
+            // CREATE A WINDOW OBJECT.
+            var win = window.open('', '', 'height=600,width=600');
+
+            win.document.write('<html><head>');
+            win.document.write('<title>EMPLOYER DETAILS</title>'); // <title> FOR PDF HEADER.
+            win.document.write(style); // ADD STYLE INSIDE THE HEAD TAG.
+            win.document.write('</head>');
+            win.document.write('<body>');
+            win.document.write(sTable); // THE TABLE CONTENTS INSIDE THE BODY TAG.
+            win.document.write('</body></html>');
+
+            win.document.close(); // CLOSE THE CURRENT WINDOW.
+
+            win.print(); // PRINT THE CONTENTS.
         }
     </script>
 
