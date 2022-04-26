@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Altruists | OldAge Table</title>
+    <title>Altruists | User Table</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -97,21 +97,6 @@
     </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh;"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a
-                href="index.html">Home</a></span> <span>Search</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">ADMIN PANEL</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
@@ -151,19 +136,15 @@
                 </div>
           </div>
 
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+                <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
                     <div class="form-group">
                         <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
                             <thead>
                                 <tr>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">ID</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Address ID</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Name</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Email</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Contact Number</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Availibility</td>
-                                    <th style="border: 2px solid white; color: white;  text-align: center;">Speciality</td>
+                                    <th style="border: 2px solid white; color: white; width: 12.5%; text-align: center;">User Id</td>
+                                    <th style="border: 2px solid white; color: white; width: 12.5%; text-align: center;">Password</td>
+                                    
                                 </tr>
 
                             </thead>
@@ -177,7 +158,7 @@
 
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                                    $sql1 = "SELECT Home_Id,Add_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome ;";
+                                    $sql1 = "SELECT User_Id,Password FROM User ;";
 
                                     $result = $conn->query($sql1);
 
@@ -186,19 +167,15 @@
 
                                         while ($row = $result->fetch_assoc()) 
                                         {
+                                            header("Content-type: image/jpg"); 
                                             echo "<tr>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Home_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Add_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["HomeName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Email"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["ContactNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Availability"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Speciality"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["User_Id"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Password"] . "</td>
+                                          
                                                  </tr>";
                                         }
                                     }
                                 
-
                             ?>
 
                             </tbody>

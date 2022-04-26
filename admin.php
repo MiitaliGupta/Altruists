@@ -10,7 +10,7 @@
 
         if($file == 'academic')
         {
-          echo "hi";
+          include 'php/print_academic.php';
         }
         else if($file == 'address')
         {
@@ -40,14 +40,26 @@
         {
           include 'php/print_patient.php';
         }
-        // else if($file == 'personal')
-        // else if($file == 'stu')
-        // else if($file == 'tea')
+        else if($file == 'personal')
+        {
+          include 'php/print_info.php';
+        }
+        else if($file == 'stu')
+        {
+          include 'php/print_student.php';
+        }
+        else if($file == 'tea')
+        {
+          include 'php/print_teacher.php';
+        }
         else if($file == 'vol')
         {
           include 'php/print_volunteer.php';
         }
-        // else if($file == 'user')
+        else if($file == 'user')
+        {
+          include 'php/print_user.php';
+        }
 
 ?>
 

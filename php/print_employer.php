@@ -141,17 +141,17 @@
 
                             <thead>
                                 <tr>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">ID</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Employer Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Business Name</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Email</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Contact Number</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Designation</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Availability</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Working Hours</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Salary</td>
-                                    <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">Required Qualification</td>
-                                    <th style="border: 1px solid white; color: white;  text-align: center;">Job Description</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">ID</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Employer Name</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Business Name</td>
+                                    <th style="border: 1px solid white; color: white; width: auto; text-align: center;">Email</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Contact Number</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Designation</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Availability</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Working Hours</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Salary</td>
+                                    <th style="border: 1px solid white; color: white; width: 9%; text-align: center;">Required Qualification</td>
+                                    <th style="border: 1px solid white; color: white; width: auto; text-align: center;">Job Description</td>
                                 </tr>
 
                             </thead>

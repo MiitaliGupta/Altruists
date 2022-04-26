@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Altruists | OldAge Table</title>
+    <title>Altruists | Student Table</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -158,12 +158,11 @@
                             <thead>
                                 <tr>
                                     <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">ID</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Address ID</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Name</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Email</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Contact Number</td>
-                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Availibility</td>
-                                    <th style="border: 2px solid white; color: white;  text-align: center;">Speciality</td>
+                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Information ID</td>
+                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Mother's Name</td>
+                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Mother's Salary</td>
+                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Father's Name</td>
+                                    <th style="border: 2px solid white; color: white; width: 16.6%; text-align: center;">Father's Salary</td>
                                 </tr>
 
                             </thead>
@@ -177,7 +176,7 @@
 
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                                    $sql1 = "SELECT Home_Id,Add_Id, HomeName, Email, ContactNo, Availability, Speciality FROM OldAgeHome ;";
+                                    $sql1 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student ;";
 
                                     $result = $conn->query($sql1);
 
@@ -187,13 +186,12 @@
                                         while ($row = $result->fetch_assoc()) 
                                         {
                                             echo "<tr>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Home_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Add_Id"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["HomeName"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Email"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["ContactNo"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Availability"] . "</td>
-                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Speciality"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Id"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["Info_Id"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["MotherName"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["MotherSalary"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["FatherName"] . "</td>
+                                                    <td style=\"border: 1px solid white; color: white; width: 16.6%; text-align: center;\">" . $row["FatherSalary"] . "</td>
                                                  </tr>";
                                         }
                                     }
