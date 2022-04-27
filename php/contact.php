@@ -19,7 +19,7 @@ window.location. href="http://localhost:3307/Altruists/contact.html";
 else 
 {
   // echo "Error: " . $sql . "<br>" . $conn->error;
-  '<script LANGUAGE="JavaScript">
+  echo'<script LANGUAGE="JavaScript">
 alert("Form Submition Unsuccessful");
 window.location. href="http://localhost:3307/Altruists/contact.html";
 </script>';
