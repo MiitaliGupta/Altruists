@@ -189,7 +189,7 @@
                                                     <td >" . $row["Id"] . "</td>
                                                     <td >" . $row["Info_Id"] . "</td>
                                                     <td >" . $row["Job"] . "</td>
-                                                    <td >" . $row["Image"] . "</td>
+                                                    <td > <img src =' " . $row["Image"] . "' width=150 height=150></td>
                                                     <td >" . $row["School_College"] . "</td>
                                                     <td >" . $row["Degree"] . "</td>
                                                     <td >" . $row["Years"] . "</td>
