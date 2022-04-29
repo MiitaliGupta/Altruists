@@ -107,8 +107,8 @@
     </nav>
     <!-- END nav -->
 
-    <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
-        <div class="overlay"></div>
+    <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg); width:fit-content;">
+        <div class="overlay" style="width:100vw;"></div>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <div class="row d-md-flex">
             <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">

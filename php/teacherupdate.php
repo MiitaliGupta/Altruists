@@ -19,23 +19,23 @@ if ($nclass != NULL) {
     $result = $conn->query($sql1);
 }
 if ($sub1 != NULL) {
-    $sql1 = "Update Academic Set Class = '$sub1' where Id = '$sid';";
+    $sql1 = "Update Academic Set Subject1 = '$sub1' where Id = '$sid';";
     $result = $conn->query($sql1);
 }
 if ($sub2 != NULL) {
-    $sql1 = "Update Academic Set Class = '$sub2' where Id = '$sid';";
+    $sql1 = "Update Academic Set Subject2 = '$sub2' where Id = '$sid';";
     $result = $conn->query($sql1);
 }
 if ($sub3 != NULL) {
-    $sql1 = "Update Academic Set Class = '$sub3' where Id = '$sid';";
+    $sql1 = "Update Academic Set Subject3 = '$sub3' where Id = '$sid';";
     $result = $conn->query($sql1);
 }
 if ($sub4 != NULL) {
-    $sql1 = "Update Academic Set Class = '$sub4' where Id = '$sid';";
+    $sql1 = "Update Academic Set Subject4 = '$sub4' where Id = '$sid';";
     $result = $conn->query($sql1);
 }
 if ($sub5 != NULL) {
-    $sql1 = "Update Academic Set Class = '$sub5' where Id = '$sid';";
+    $sql1 = "Update Academic Set Subject5 = '$sub5' where Id = '$sid';";
     $result = $conn->query($sql1);
 }
 

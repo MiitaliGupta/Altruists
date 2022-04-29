@@ -32,6 +32,12 @@
   <script type='text/javascript'>
     (function (I, L, T, i, c, k, s) { if (I.iticks) return; I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] }; var h = T.head || T.documentElement; var e = T.createElement(i); var l = I.location; e.async = true; e.src = (L || c) + '/client/inject-v2.min.js'; h.insertBefore(e, h.firstChild); I.iticks.call = function (a, b) { I.iticks.queue.push([a, b]); }; })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'waaQiRek4D6HRgMqq_c', {});
   </script>
+  <style>
+    .largecheck{
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 
 </head>
 
@@ -109,28 +115,30 @@
           <h1 class="mb-3" style="color:white;">Update Student Details</h1>
 
           <div class="form-group">
-            <input type="checkbox" name="box1" id="box1" value="checkkkk">
+            <input type="checkbox" value="box1" id="box1"  class="largecheck">
             <label for="box1" style="font-size: 25px;color: white;">Class</label>
           </div>
+
           <div class="form-group">
-            <input type="checkbox" name="box2" id="box2" value="checkkkk">
-            <label for="box1" style="font-size: 25px;color: white;">Subject 1</label>
+            <input type="checkbox" value="box2" id="box2" class="largecheck">
+            <label for="box2" style="font-size: 25px;color: white;">Subject 1</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" value="box3" id="box3" class="largecheck">
+            <label for="box3" style="font-size: 25px;color: white;">Subject 2</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" name="box3" id="box3" value="checkkkk">
-            <label for="box1" style="font-size: 25px;color: white;">Subject 2</label>
+            <input type="checkbox" value="box4" id="box4" class="largecheck">
+            <label for="box4" style="font-size: 25px;color: white;">Subject 3</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" name="box4" id="box4" value="checkkkk">
-            <label for="box1" style="font-size: 25px;color: white;">Subject 3</label>
+            <input type="checkbox" value="box5" id="box5" class="largecheck">
+            <label for="box5" style="font-size: 25px;color: white;">Subject 4</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" name="box5" id="box5" value="checkkkk">
-            <label for="box1" style="font-size: 25px;color: white;">Subject 4</label>
-          </div>
-          <div class="form-group">
-            <input type="checkbox" name="box6" id="box6" value="checkkkk">
-            <label for="box1" style="font-size: 25px;color: white;">Subject 5</label>
+            <input type="checkbox" value="box6" id="box6" class="largecheck">
+            <label for="box6" style="font-size: 25px;color: white;">Subject 5</label>
           </div>
           <div class="form-group">
             <input type="button" value="Proceed" onclick="clickevent1()" class="btn btn-white py-3 px-5">
