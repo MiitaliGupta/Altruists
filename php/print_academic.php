@@ -191,7 +191,7 @@
                                             <td >" . $row["Subject4"] . "</td>
                                             <td >" . $row["Subject5"] . "</td>
                                             <td >" . $row["StrongestSubject"] . "</td>
-                                            <td >" . $row["WeakestSuject"] . "</td>
+                                            <td >" . $row["WeakestSubject"] . "</td>
                                                  </tr>";
                                         }
                                     }
