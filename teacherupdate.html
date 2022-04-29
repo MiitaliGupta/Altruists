@@ -76,7 +76,7 @@
           <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
           <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-          <!-- <li class="nav-item"><a href="#" class="nav-link">Login</a></li> -->
+          <li class="nav-item"><a href="login.html" class="nav-link">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -101,7 +101,7 @@
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
     <!-- <div class="container"> -->
-    <form action="php/teacher.php" class="volunter-form container" method="post">
+    <form action="php/teacherupdate.php" class="volunter-form container" method="post">
       <div class="row d-md-flex">
         <!-- <div class="col-md-6 d-flex ftco-animate"> -->
 
@@ -205,6 +205,8 @@
       if (checkBox6.checked == true) {
         document.getElementById("div6").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Subject 5\" name=\"sub5\">";
       }
+
+      document.getElementById("div7").innerHTML = "<input type=\"submit\" value=\"Apply\" class=\"btn btn-white py-3 px-5\">";
 
     }
 

@@ -5,19 +5,32 @@ $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","
 
 		$user=$_POST['userid'];
 		$pwd=$_POST['pwd'];
-		$sql="select * from User where User_Id= '$user'AND Password='$pwd'";
+        $type=ord($user);
+		$sql="select Password from User where User_Id= '$user'";
 
         $result = mysqli_query($con, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
+        $row = $result->fetch_assoc(); 
+        $id = $row['Password']; 
          
-        if($count == 1)
+        if($id == $pwd)
         {  
             if($user === "admin")
             {
                 echo '<script LANGUAGE="JavaScript">
                 window.location. href="http://localhost:3307/Altruists/admin.html";
                 </script>';   
+            }
+            else if($type === 116 || $type === 84)
+            {
+                echo '<script LANGUAGE="JavaScript">
+                window.location. href="http://localhost:3307/Altruists/teacherupdate.html";
+                </script>'; 
+            }
+            else if($type === 115 || $type === 83)
+            {
+                echo '<script LANGUAGE="JavaScript">
+                window.location. href="http://localhost:3307/Altruists/studentupdate.html";
+                </script>';
             }
         }  
         else
@@ -32,5 +45,4 @@ $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","
         }   
         
         mysqli_close($con);  
-        
-$con->close();
+?>
