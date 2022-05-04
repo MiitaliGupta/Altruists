@@ -29,7 +29,7 @@ $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","
             else if($type === 115 || $type === 83)
             {
                 echo '<script LANGUAGE="JavaScript">
-                window.location. href="http://localhost:3307/Altruists/studentupdate.html";
+                window.location. href="http://localhost:3307/Altruists/studentdisplay.html";
                 </script>';
             }
         }  
