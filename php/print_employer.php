@@ -286,28 +286,24 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item dropdown">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
-                                    <li><a class="dropdown-item" href="teacher.html">Teacher Sign Up</a></li>
-                                    <li><a class="dropdown-item" href="student.html">Student Sign Up</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
-                                    <li><a class="dropdown-item" href="employer.html">Employer Registration</a></li>
-                                    <li><a class="dropdown-item" href="employee.html">Employee Registration</a></li>
-                                    <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
-                                    <li><a class="dropdown-item" href="oldage.html">Old Age Home Registration</a></li>
-                                    <li><a class="dropdown-item" href="oldagesearch.html">Old Age Home Admission</a></li>
-                                </ul>
-                            </li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown"aria-expanded="false">
+              Services
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" role="menu">
+                   <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="teacher.html" style="color: black;">Teacher Sign Up</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="student.html" style="color: black;">Student Sign Up</a></li>
+                  <li role="presentation"><hr class="dropdown-divider" style="color: black;"></li>
+                  <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="employer.html" style="color: black;">Employer Registration</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="employee.html" style="color: black;">Employee Registration</a></li>
+                  <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
+                  <li role="presentation"><hr class="dropdown-divider" style="color: black;"></li>
+                  <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="oldage.html" style="color: black;">Old Age Home Registration</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="oldagesearch.html" style="color: black;">Old Age Home Admission</a></li>
+                </ul>
+              </li>
                             <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
                             <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>

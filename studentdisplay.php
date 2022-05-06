@@ -138,24 +138,125 @@
             </div>
         </form>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
-            <div class="row d-md-flex">
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+            <!-- <div class="row d-md-flex"> -->
+            <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
+                <div id="tab">
+                    <!-- <div class="form-group"> -->
+                    <table style="border: 1px solid white; width: 100%; padding-left: 40px" cellpadding="13">
+
+                        <thead>
+                            <tr>
+                                <!-- <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">SNo</td> -->
+                                <th>Student Id</td>
+                                <th>Class</td>
+                                <th>Subject 1</td>
+                                <th>Subject 2</td>
+                                <th>Subject 3</td>
+                                <th>Subject 4</td>
+                                <th>Subject 5</td>
+                                <th>Strongest Subject</td>
+                                <th>Weakest Subject</td>
+                            </tr>
+
+                        </thead>
+
+                        <tbody style="color : white;" id="table1">
+
+
+                            <?php
+
+                            error_reporting(E_ERROR | E_PARSE);
+
+                            $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
+                            $Sid = $_POST['Sid'];
+                            $sql1 = "SELECT Id, Class,Subject1, Subject2, Subject3,Subject4, Subject5, StrongestSubject, WeakestSubject FROM Academic WHERE Id = '$Sid';";
+
+                            $result = $conn->query($sql1);
+
+                            if ($result->num_rows > 0) {
+
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>
+                                            <td >" . $row["Id"] . "</td>
+                                            <td >" . $row["Class"] . "</td>
+                                            <td >" . $row["Subject1"] . "</td>
+                                            <td >" . $row["Subject2"] . "</td>
+                                            <td >" . $row["Subject3"] . "</td>
+                                            <td >" . $row["Subject4"] . "</td>
+                                            <td >" . $row["Subject5"] . "</td>
+                                            <td >" . $row["StrongestSubject"] . "</td>
+                                            <td >" . $row["WeakestSubject"] . "</td>
+                                                 </tr>";
+                                }
+                            }
+
+
+                            ?>
+                        </tbody>
+                    </table>
+                    <br>
+                    <!-- </div> -->
+                    <!-- <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;"> -->
                     <div id="tab">
                         <div class="form-group">
-                            <table style="border: 1px solid white; width: 100%; padding-left: 40px" cellpadding="13">
+                            <table style="border: 1px solid white;" cellpadding="13">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 100">ID</td>
+                                        <th style="width: 260px">Mother's Name</td>
+                                        <th style="width: 260px">Mother's Salary</td>
+                                        <th style="width: 260px">Father's Name</td>
+                                        <th style="width: 260px">Father's Salary</td>
+                                    </tr>
+                                </thead>
+                                <tbody style="color : white;" id="table1">
+                                    <?php
+                                    error_reporting(E_ERROR | E_PARSE);
+                                    $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
+                                    $sql1 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
+                                    $result = $conn->query($sql1);
+                                    $id = $row["Info_Id"];
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>
+                                                    <td >" . $row["Id"] . "</td>
+                                                    <td >" . $row["MotherName"] . "</td>
+                                                    <td >" . $row["MotherSalary"] . "</td>
+                                                    <td >" . $row["FatherName"] . "</td>
+                                                    <td >" . $row["FatherSalary"] . "</td>
+                                                 </tr>";
+                                        }
+                                    }
+
+
+                                    ?>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                    <div style="padding-bottom: 13px;"></div>
+
+
+                    <!-- </div> -->
+
+                    <!-- <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;"> -->
+                    <div id="tab">
+                        <div class="form-group">
+                            <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 
                                 <thead>
                                     <tr>
                                         <!-- <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">SNo</td> -->
-                                        <th>Sudent Id</td>
-                                        <th>Class</td>
-                                        <th>Subject 1</td>
-                                        <th>Subject 2</td>
-                                        <th>Subject 3</td>
-                                        <th>Subject 4</td>
-                                        <th>Subject 5</td>
-                                        <th>Strongest Subject</td>
-                                        <th>Weakest Subject</td>
+                                        <th>Name</td>
+                                        <th>Date of Birth</td>
+                                        <th>Gender</td>
+                                        <th>Email</td>
+                                        <th>Contact Number</td>
+                                        <th>Adhaar Number</td>
+                                        <th>Address Id</td>
                                     </tr>
 
                                 </thead>
@@ -168,124 +269,25 @@
                                     error_reporting(E_ERROR | E_PARSE);
 
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
-                                    $Sid = $_POST['Sid'];
-                                    $sql1 = "SELECT Id, Class,Subject1, Subject2, Subject3,Subject4, Subject5, StrongestSubject, WeakestSubject FROM Academic WHERE Id = '$Sid';";
+
+                                    $sql2 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
+
+                                    $result2 = $conn->query($sql2);
+                                    $row = $result2->fetch_assoc();
+                                    $id = $row["Info_Id"];
+
+
+                                    $sql1 = "SELECT Names,DOB,Gender, Email, ContactNo,AdhaarNo, Add_Id FROM PersonalInfo WHERE Info_Id = $id;";
 
                                     $result = $conn->query($sql1);
+
+
+
 
                                     if ($result->num_rows > 0) {
 
                                         while ($row = $result->fetch_assoc()) {
                                             echo "<tr>
-                                            <td >" . $row["Id"] . "</td>
-                                            <td >" . $row["Class"] . "</td>
-                                            <td >" . $row["Subject1"] . "</td>
-                                            <td >" . $row["Subject2"] . "</td>
-                                            <td >" . $row["Subject3"] . "</td>
-                                            <td >" . $row["Subject4"] . "</td>
-                                            <td >" . $row["Subject5"] . "</td>
-                                            <td >" . $row["StrongestSubject"] . "</td>
-                                            <td >" . $row["WeakestSubject"] . "</td>
-                                                 </tr>";
-                                        }
-                                    }
-
-
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
-                            <div id="tab">
-                                <div class="form-group">
-                                    <table style="border: 1px solid white; width: 50vw;" cellpadding="13">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</td>
-                                                <th>Mother's Name</td>
-                                                <th>Mother's Salary</td>
-                                                <th>Father's Name</td>
-                                                <th>Father's Salary</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody style="color : white;" id="table1">
-                                            <?php
-                                            error_reporting(E_ERROR | E_PARSE);
-                                            $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
-                                            $sql1 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
-                                            $result = $conn->query($sql1);
-                                            $id = $row["Info_Id"];
-                                            if ($result->num_rows > 0) {
-                                                while ($row = $result->fetch_assoc()) {
-                                                    echo "<tr>
-                                                    <td >" . $row["Id"] . "</td>
-                                                    <td >" . $row["MotherName"] . "</td>
-                                                    <td >" . $row["MotherSalary"] . "</td>
-                                                    <td >" . $row["FatherName"] . "</td>
-                                                    <td >" . $row["FatherSalary"] . "</td>
-                                                 </tr>";
-                                                }
-                                            }
-
-
-                                            ?>
-
-                                        </tbody>
-
-                                    </table>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
-                            <div id="tab">
-                                <div class="form-group">
-                                    <table style="border: 1px solid white; width: 100%;" cellpadding="13">
-
-                                        <thead>
-                                            <tr>
-                                                <!-- <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">SNo</td> -->
-                                                <th>Name</td>
-                                                <th>Date of Birth</td>
-                                                <th>Gender</td>
-                                                <th>Email</td>
-                                                <th>Contact Number</td>
-                                                <th>Adhaar Number</td>
-                                                <th>Address Id</td>
-                                            </tr>
-
-                                        </thead>
-
-                                        <tbody style="color : white;" id="table1">
-
-
-                                            <?php
-
-                                            error_reporting(E_ERROR | E_PARSE);
-
-                                            $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
-
-                                            $sql2 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
-
-                                            $result2 = $conn->query($sql2);
-                                            $row = $result2->fetch_assoc();
-                                            $id = $row["Info_Id"];
-
-
-                                            $sql1 = "SELECT Names,DOB,Gender, Email, ContactNo,AdhaarNo, Add_Id FROM PersonalInfo WHERE Info_Id = $id;";
-
-                                            $result = $conn->query($sql1);
-
-
-
-
-                                            if ($result->num_rows > 0) {
-
-                                                while ($row = $result->fetch_assoc()) {
-                                                    echo "<tr>
                                             
                                             <td >" . $row["Names"] . "</td>
                                             <td >" . $row["DOB"] . "</td>
@@ -295,32 +297,32 @@
                                             <td >" . $row["AdhaarNo"] . "</td>
                                             <td >" . $row["Add_Id"] . "</td>
                                                  </tr>";
-                                                }
-                                            }
+                                        }
+                                    }
 
 
-                                            ?>
+                                    ?>
 
-                                        </tbody>
+                                </tbody>
 
-                                    </table>
-
-                                </div>
-                            </div>
-
+                            </table>
 
                         </div>
-
-
                     </div>
 
-                    <div class="form-group">
-                        <input type="button" value="Download Report" id="btPrint" onclick="createPDF()" class="btn btn-white py-3 px-5">
-                    </div>
+
                 </div>
+                <div class="form-group">
+                    <input type="button" value="Download Report" id="btPrint" onclick="createPDF()" class="btn btn-white py-3 px-5">
+                </div>
+
+            </div>
 
 
             </div>
+
+
+            <!-- </div> -->
         </form>
 
         </div>
@@ -389,28 +391,24 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item dropdown">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
-                                    <li><a class="dropdown-item" href="teacher.html">Teacher Sign Up</a></li>
-                                    <li><a class="dropdown-item" href="student.html">Student Sign Up</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
-                                    <li><a class="dropdown-item" href="employer.html">Employer Registration</a></li>
-                                    <li><a class="dropdown-item" href="employee.html">Employee Registration</a></li>
-                                    <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
-                                    <li><a class="dropdown-item" href="oldage.html">Old Age Home Registration</a></li>
-                                    <li><a class="dropdown-item" href="oldagesearch.html">Old Age Home Admission</a></li>
-                                </ul>
-                            </li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown"aria-expanded="false">
+              Services
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" role="menu">
+                   <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="teacher.html" style="color: black;">Teacher Sign Up</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="student.html" style="color: black;">Student Sign Up</a></li>
+                  <li role="presentation"><hr class="dropdown-divider" style="color: black;"></li>
+                  <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="employer.html" style="color: black;">Employer Registration</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="employee.html" style="color: black;">Employee Registration</a></li>
+                  <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
+                  <li role="presentation"><hr class="dropdown-divider" style="color: black;"></li>
+                  <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="oldage.html" style="color: black;">Old Age Home Registration</a></li>
+                  <li role="presentation"><a class="dropdown-item" tabindex="-1" role="menuitem" href="oldagesearch.html" style="color: black;">Old Age Home Admission</a></li>
+                </ul>
+              </li>
                             <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
                             <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
