@@ -106,8 +106,8 @@
     </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh; width:fit-content;" data-stellar-background-ratio="0.5">
-    <div class="overlay" style="width:auto;"></div>
+    <div class="hero-wrap" style="background-image: url('images/cause-5.jpg'); height: 100vh;" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
