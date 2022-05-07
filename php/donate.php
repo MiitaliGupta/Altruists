@@ -58,11 +58,11 @@ else
 
 if ($conn->query($sql3) === TRUE) 
 {
-//echo "New record created successfully<BR><BR><BR>";
-echo "<script LANGUAGE='JavaScript'>
-alert('Donation Successful');
-window.location. href='http://localhost:3307/Altruists/donate.html';
-</script>";
+// echo "<script LANGUAGE='JavaScript'>
+// alert('Donation Successful');
+// window.location. href='http://localhost:3307/Altruists/donate.html';
+// </script>";
+include 'pay.php';
 } 
 else 
 {
@@ -73,3 +73,4 @@ window.location. href='http://localhost:3307/Altruists/donate.html';
 </script>";
 }
 $conn->close();
+?>
