@@ -107,8 +107,8 @@
     </nav>
     <!-- END nav -->
 
-    <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg); width:fit-content;">
-        <div class="overlay" style="width:auto;"></div>
+    <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
+        <div class="overlay"></div>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <div class="row d-md-flex">
             <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first">
@@ -154,6 +154,7 @@
                             <thead>
                                 <tr>
                                     <th >ID</td>
+                                    <th >Address Id</td>
                                     <th >Business Name</td>
                                     <th >Donor Name</td>
                                     <th >Gender</td>
@@ -162,13 +163,6 @@
                                     <th >PAN</td>
                                     <th >Date</td>
                                     <th >Amount</td>
-                                    <th >Payment Type</td>
-                                    <th >UPI</td>
-                                    <th >Account Number</td>
-                                    <th >Bank Name</td>
-                                    <th >IFSC</td>
-                                    <th >Card Number</td>
-                                    <th >CVV</td>
                                 </tr>
 
                             </thead>
@@ -182,7 +176,7 @@
 
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                                    $sql1 = "SELECT Id, BusinessName, DonorName, Gender, Email, ContactNo, PAN, Date,Amount, Payment_type, UPI_Id,AccountNo, BankName,IFSC, CardNo, CVV FROM Donor;";
+                                    $sql1 = "SELECT Id,Add_Id, BusinessName, DonorName, Gender, Email, ContactNo, PAN, Date,Amount FROM Donor;";
 
                                     $result = $conn->query($sql1);
 
@@ -193,6 +187,7 @@
                                         {
                                             echo "<tr>
                                                     <td >" . $row["Id"] . "</td>
+                                                    <td >" . $row["Add_Id"] . "</td>
                                                     <td >" . $row["BusinessName"] . "</td>
                                                     <td >" . $row["DonorName"] . "</td>
                                                     <td >" . $row["Gender"] . "</td>
@@ -201,13 +196,6 @@
                                                     <td >" . $row["PAN"] . "</td>
                                                     <td >" . $row["Date"] . "</td>
                                                     <td >" . $row["Amount"] . "</td>
-                                                    <td >" . $row["Payment_type"] . "</td>
-                                                    <td >" . $row["UPI_Id"] . "</td>
-                                                    <td >" . $row["AccountNo"] . "</td>
-                                                    <td >" . $row["BankName"] . "</td>
-                                                    <td >" . $row["IFSC"] . "</td>
-                                                    <td >" . $row["CardNo"] . "</td>
-                                                    <td >" . $row["CVV"] . "</td>
                                                  </tr>";
                                         }
                                     }
