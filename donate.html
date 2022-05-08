@@ -164,14 +164,14 @@
 
           <div class="form-control" Style="Border:none;"></div>
           <div class="form-group">
-            <div class="form-control">
+            <!-- <div class="form-control">
               Payment Method:&nbsp;
               <label><input type="radio" name="payment" value="UPI" required
                   onclick="clickevent1()">&nbsp;UPI</label>&nbsp;&nbsp;
               <label><input type="radio" name="payment" value="Card"
                   onclick="clickevent2()">&nbsp;Card</label>&nbsp;&nbsp;
               <label><input type="radio" name="payment" value="Bank Transfer" onclick="clickevent3()">&nbsp;NEFT/RTGS</label>
-            </div>
+            </div> -->
           </div>
           <div class="form-group" id="text2"></div>
 
@@ -349,28 +349,27 @@
 
 <script>
 
-  function clickevent1() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"UPI ID\" name=\"upiid\">";
-    document.getElementById("text2").innerHTML = "";
-    document.getElementById("text3").innerHTML = "";
-  }
+  // function clickevent1() {
+  //   document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"UPI ID\" name=\"upiid\">";
+  //   document.getElementById("text2").innerHTML = "";
+  //   document.getElementById("text3").innerHTML = "";
+  // }
 
-  function clickevent2() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Card Number\" name=\"cardnum\">";
-    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"CVV\" name=\"cvvnum\">";
-    document.getElementById("text3").innerHTML = "";
+  // function clickevent2() {
+  //   document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Card Number\" name=\"cardnum\">";
+  //   document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"CVV\" name=\"cvvnum\">";
+  //   document.getElementById("text3").innerHTML = "";
 
-  }
+  // }
 
-  function clickevent3() {
-    document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Bank Name\" name=\"bankname\">";
-    document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Account Number Number\" name=\"accnum\">";
-    document.getElementById("text3").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"IFSC Code\" name=\"ifsccode\">";
-  }
+  // function clickevent3() {
+  //   document.getElementById("text1").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Bank Name\" name=\"bankname\">";
+  //   document.getElementById("text2").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"Account Number Number\" name=\"accnum\">";
+  //   document.getElementById("text3").innerHTML = "<input type=\"text\" class=\"form-control\" placeholder=\"IFSC Code\" name=\"ifsccode\">";
+  // }
 
   function validateForm() {
-    // const name = document.forms["MyForm"]["name"].value;
-/*
+
     if (document.forms["MyForm"]["bname"].value == "") {
       document.getElementById("div1").innerHTML = "*Please Enter Business Name";
       return false;
@@ -415,13 +414,12 @@
         document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
         return false;
     }
-  }
-  */
-  const payment = document.forms["MyForm"]["payment"].value;
-let details=null;
- if(payment=="UPI")
- {
-   details = {
+    if (document.forms["MyForm"]["gender"].value == "") {
+        document.getElementById("div1").innerHTML = "*Please Select Your Gender";
+        return false;
+    }
+  
+const details = {
     name: document.forms["MyForm"]["name"].value,
     email: document.forms["MyForm"]["email"].value,
     bname: document.forms["MyForm"]["bname"].value,
@@ -433,48 +431,9 @@ let details=null;
     state: document.forms["MyForm"]["state"].value,
     pin: document.forms["MyForm"]["pin"].value,
     amt: document.forms["MyForm"]["amt"].value,
-    payment: document.forms["MyForm"]["payment"].value,
-    upiid: document.forms["MyForm"]["upiid"].value
+    number: document.forms["MyForm"]["number"].value
   }
-  }
- else if(payment=="Card")
- {
-  details = {
-    name: document.forms["MyForm"]["name"].value,
-    email: document.forms["MyForm"]["email"].value,
-    bname: document.forms["MyForm"]["bname"].value,
-    pan: document.forms["MyForm"]["pan"].value,
-    gender: document.forms["MyForm"]["gender"].value,
-    line1: document.forms["MyForm"]["line1"].value,
-    line2: document.forms["MyForm"]["line2"].value,
-    city: document.forms["MyForm"]["city"].value,
-    state: document.forms["MyForm"]["state"].value,
-    pin: document.forms["MyForm"]["pin"].value,
-    amt: document.forms["MyForm"]["amt"].value,
-    payment: document.forms["MyForm"]["payment"].value,
-    cardnum: document.forms["MyForm"]["cardnum"].value,
-    cvvnum: document.forms["MyForm"]["cvvnum"].value
-  }
-  }
- else {
-  details = {
-    name: document.forms["MyForm"]["name"].value,
-    email: document.forms["MyForm"]["email"].value,
-    bname: document.forms["MyForm"]["bname"].value,
-    pan: document.forms["MyForm"]["pan"].value,
-    gender: document.forms["MyForm"]["gender"].value,
-    line1: document.forms["MyForm"]["line1"].value,
-    line2: document.forms["MyForm"]["line2"].value,
-    city: document.forms["MyForm"]["city"].value,
-    state: document.forms["MyForm"]["state"].value,
-    pin: document.forms["MyForm"]["pin"].value,
-    amt: document.forms["MyForm"]["amt"].value,
-    payment: document.forms["MyForm"]["payment"].value,
-    bankname: document.forms["MyForm"]["bankname"].value,
-    accnum: document.forms["MyForm"]["accnum"].value,
-    ifsccode: document.forms["MyForm"]["ifsccode"].value
-  }
-  }
+  
 
   $.ajax({
       type: 'POST',
@@ -485,7 +444,7 @@ let details=null;
         makePayment().then(console.log)
       }
     });
-}
+
 
 const initializeRazorpay = () => {
     return new Promise((resolve) => {
@@ -528,5 +487,5 @@ const initializeRazorpay = () => {
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
-
+  }
 </script>
