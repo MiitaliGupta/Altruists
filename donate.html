@@ -101,7 +101,8 @@
 
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
-    <form name="MyForm" action="php/pay.php" class="volunter-form container" method="post"onsubmit="return validateForm()">
+    <!-- <form name="MyForm" action="php/pay.php" class="volunter-form container" method="post"onsubmit="return validateForm()"> -->
+      <form name="MyForm" class="volunter-form container">
       <div class="row d-md-flex">
 
         <div class="col col-md-6 pl-md-5 volunteer ftco-animate order-first">
@@ -176,7 +177,7 @@
 
 
           <div class="form-group">
-            <input type="submit" value="Donate" class="btn btn-white py-3 px-5">
+            <input type="button" onclick="validateForm()" value="Donate" class="btn btn-white py-3 px-5">
             <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
           </div>
         </div>
@@ -368,6 +369,8 @@
   }
 
   function validateForm() {
+    // const name = document.forms["MyForm"]["name"].value;
+/*
     if (document.forms["MyForm"]["bname"].value == "") {
       document.getElementById("div1").innerHTML = "*Please Enter Business Name";
       return false;
@@ -384,7 +387,7 @@
       document.getElementById("div1").innerHTML = "*Please Enter Your Number";
       return false;
     }
-    if (document.forms["MyForm"]["PAN"].value == "") {
+    if (document.forms["MyForm"]["pan"].value == "") {
         document.getElementById("div1").innerHTML = "*Please Enter Your PAN";
         return false;
     }
@@ -413,9 +416,117 @@
         return false;
     }
   }
+  */
+  const payment = document.forms["MyForm"]["payment"].value;
+let details=null;
+ if(payment=="UPI")
+ {
+   details = {
+    name: document.forms["MyForm"]["name"].value,
+    email: document.forms["MyForm"]["email"].value,
+    bname: document.forms["MyForm"]["bname"].value,
+    pan: document.forms["MyForm"]["pan"].value,
+    gender: document.forms["MyForm"]["gender"].value,
+    line1: document.forms["MyForm"]["line1"].value,
+    line2: document.forms["MyForm"]["line2"].value,
+    city: document.forms["MyForm"]["city"].value,
+    state: document.forms["MyForm"]["state"].value,
+    pin: document.forms["MyForm"]["pin"].value,
+    amt: document.forms["MyForm"]["amt"].value,
+    payment: document.forms["MyForm"]["payment"].value,
+    upiid: document.forms["MyForm"]["upiid"].value
+  }
+  }
+ else if(payment=="Card")
+ {
+  details = {
+    name: document.forms["MyForm"]["name"].value,
+    email: document.forms["MyForm"]["email"].value,
+    bname: document.forms["MyForm"]["bname"].value,
+    pan: document.forms["MyForm"]["pan"].value,
+    gender: document.forms["MyForm"]["gender"].value,
+    line1: document.forms["MyForm"]["line1"].value,
+    line2: document.forms["MyForm"]["line2"].value,
+    city: document.forms["MyForm"]["city"].value,
+    state: document.forms["MyForm"]["state"].value,
+    pin: document.forms["MyForm"]["pin"].value,
+    amt: document.forms["MyForm"]["amt"].value,
+    payment: document.forms["MyForm"]["payment"].value,
+    cardnum: document.forms["MyForm"]["cardnum"].value,
+    cvvnum: document.forms["MyForm"]["cvvnum"].value
+  }
+  }
+ else {
+  details = {
+    name: document.forms["MyForm"]["name"].value,
+    email: document.forms["MyForm"]["email"].value,
+    bname: document.forms["MyForm"]["bname"].value,
+    pan: document.forms["MyForm"]["pan"].value,
+    gender: document.forms["MyForm"]["gender"].value,
+    line1: document.forms["MyForm"]["line1"].value,
+    line2: document.forms["MyForm"]["line2"].value,
+    city: document.forms["MyForm"]["city"].value,
+    state: document.forms["MyForm"]["state"].value,
+    pin: document.forms["MyForm"]["pin"].value,
+    amt: document.forms["MyForm"]["amt"].value,
+    payment: document.forms["MyForm"]["payment"].value,
+    bankname: document.forms["MyForm"]["bankname"].value,
+    accnum: document.forms["MyForm"]["accnum"].value,
+    ifsccode: document.forms["MyForm"]["ifsccode"].value
+  }
+  }
 
+  $.ajax({
+      type: 'POST',
+      url: 'php/donate.php',
+      data: details,
+      success: function(data) {
+        console.log('Success:', data);
+        makePayment().then(console.log)
+      }
+    });
+}
 
+const initializeRazorpay = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
 
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
 
+      document.body.appendChild(script);
+    });
+  };
+
+  const makePayment = async () => {
+    const res = await initializeRazorpay();
+
+    if (!res) {
+      alert("Razorpay SDK Failed to load");
+      return;
+    }
+
+    var options = {
+      key: 'rzp_test_z4mJJeNvBdtycM',
+      currency: 'INR',
+      amount: document.forms["MyForm"]["amt"].value*100,
+      description: "Donation",
+      name:"Altruists",
+      image: "images/donation.png",
+      prefill: {
+        name: document.forms["MyForm"]["name"].value,
+        email: document.forms["MyForm"]["email"].value,
+        contact: document.forms["MyForm"]["number"].value,
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
 </script>

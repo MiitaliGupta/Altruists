@@ -1,29 +1,29 @@
-<?php
+<?php 
 
 error_reporting(E_ERROR | E_PARSE);
 
-$name=$_POST["name"];
-$bname=$_POST["bname"];
-$email=$_POST["email"];
-$num=$_POST["number"];
-$pan=$_POST["pan"];
-$gender=$_POST["gender"];
+$name=$_REQUEST["name"];
+$bname=$_REQUEST["bname"];
+$email=$_REQUEST["email"];
+$num=$_REQUEST["number"];
+$pan=$_REQUEST["pan"];
+$gender=$_REQUEST["gender"];
 
-$line1=$_POST["line1"];
-$line2=$_POST["line2"];
-$city=$_POST["city"];
-$state=$_POST["state"];
-$pin=$_POST["pin"];
+$line1=$_REQUEST["line1"];
+$line2=$_REQUEST["line2"];
+$city=$_REQUEST["city"];
+$state=$_REQUEST["state"];
+$pin=$_REQUEST["pin"];
 
-$amt=$_POST["amt"];
-$paymethod=$_POST["payment"];
+$amt=$_REQUEST["amt"];
+$paymethod=$_REQUEST["payment"];
 
-$upi=$_POST["upiid"];
-$card=$_POST["cardnum"];
-$cvv=$_POST["cvvnum"];
-$bank=$_POST["bankname"];
-$acc=$_POST["accnum"];
-$ifsc=$_POST["ifsccode"]; 
+$upi=$_REQUEST["upiid"];
+$card=$_REQUEST["cardnum"];
+$cvv=$_REQUEST["cvvnum"];
+$bank=$_REQUEST["bankname"];
+$acc=$_REQUEST["accnum"];
+$ifsc=$_REQUEST["ifsccode"]; 
 
 $dt=date("Y-m-d");
 
@@ -55,22 +55,22 @@ else
 {
   $sql3 = "INSERT INTO Donor(BusinessName,DonorName,Gender,Email,ContactNo,PAN,Add_Id,Date,Amount,Payment_type,UPI_Id,AccountNo,BankName,IFSC,CardNo,CVV) VALUES('$bname','$name','$gender','$email','$num','$pan','$id','$dt','$amt','$paymethod',NULL,'$acc','$bank','$ifsc',NULL,NULL)";
 }
+$conn->query($sql3);
 
-if ($conn->query($sql3) === TRUE) 
-{
+// if ($conn->query($sql3) === TRUE) 
+// {
 // echo "<script LANGUAGE='JavaScript'>
 // alert('Donation Successful');
 // window.location. href='http://localhost:3307/Altruists/donate.html';
 // </script>";
-include 'pay.php';
-} 
-else 
-{
-  // echo "Error: " . $sql . "<br>" . $conn->error;
-  echo "<script LANGUAGE='JavaScript'>
-alert('Donation Unuccessful');
-window.location. href='http://localhost:3307/Altruists/donate.html';
-</script>";
-}
+// } 
+// else 
+// {
+//   // echo "Error: " . $sql . "<br>" . $conn->error;
+//   echo "<script LANGUAGE='JavaScript'>
+// alert('Donation Unuccessful');
+// window.location. href='http://localhost:3307/Altruists/donate.html';
+// </script>";
+// }
 $conn->close();
 ?>
