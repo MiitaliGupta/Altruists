@@ -46,18 +46,29 @@ $sql4 = "SELECT MAX(Info_Id) FROM PersonalInfo";
 
 $result = $conn->query($sql4);    
 $row = $result->fetch_assoc(); 
-$id = $row['MAX(Info_Id)'];
-echo $id;
+$infoid = $row['MAX(Info_Id)'];
 
-$sql5 = "INSERT INTO Teacher(Info_Id,TotalExp,Subject1,Class1,Subject2,Class2,School_College,Degree,Years,Result) VALUES ('$id','$exp','$sub1','$cl1','$sub2','$cl2','$clg','$deg','$year','$percent')";
+$sql5="SELECT MAX(Id) FROM Teacher";
 
-if ($conn->query($sql5) === TRUE) 
+$result = $conn->query($sql5);    
+$row = $result->fetch_assoc(); 
+$id = $row['MAX(Id)'];
+$id = $id+1;
+$uid = 'T'.$id;
+
+$sql6="INSERT INTO User values('$uid','$uid');";
+$conn->query($sql6);
+
+
+$sql7 = "INSERT INTO Teacher(User_Id,Info_Id,TotalExp,Subject1,Class1,Subject2,Class2,School_College,Degree,Years,Result) VALUES ('$uid','$infoid','$exp','$sub1','$cl1','$sub2','$cl2','$clg','$deg','$year','$percent')";
+
+if ($conn->query($sql7) === TRUE) 
 {
 //echo "New record created successfully<BR><BR><BR>";
-echo "<script LANGUAGE='JavaScript'>
-window.alert('Successfully Registered as Teacher');
-window.location. href='http://localhost:3307/Altruists/teacher.html';
-</script>";
+echo '<script LANGUAGE="JavaScript">
+window.alert("Successfully Registered as Teacher\nYour Id : '.$uid.' and Password :'. $uid .'");
+window.location. href="http://localhost:3307/Altruists/teacher.html";
+</script>';
 } 
 else 
 {
