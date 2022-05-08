@@ -101,7 +101,7 @@
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
         <!-- <div class="container"> -->
-            <form action="php/employer.php" class="volunter-form container" method="post">
+            <form name="MyForm" action="php/employer.php" class="volunter-form container" method="post" onsubmit="return validateForm()">
                 <div class="row d-md-flex">
                 <!-- <div class="col-md-6 d-flex ftco-animate"> -->
                     
@@ -160,6 +160,7 @@
                           </div>
                           <div class="form-group">
                             <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                            <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
                         </div>
                 </div>
                 </div>
@@ -323,6 +324,52 @@
                 document.getElementById('logo').src = 'images/Blogo.png'
             else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350)
                 document.getElementById('logo').src = 'images/Wlogo.png'
+        }
+    </script>
+         <script>
+        function validateForm() {
+
+            if (document.forms["MyForm"]["name"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Name";
+                return false;
+            }
+            if (document.forms["MyForm"]["bname"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Business Name";
+                return false;
+            }
+            if (document.forms["MyForm"]["email"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Email";
+                return false;
+            }
+            if (document.forms["MyForm"]["number"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Contact Number";
+                return false;
+            }
+            if (document.forms["MyForm"]["post"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Available Designation";
+                return false;
+            }
+            if (document.forms["MyForm"]["avail"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter the Availability for the Specified Designation";
+                return false;
+            }
+            if (document.forms["MyForm"]["requal"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Required Qualification";
+                return false;
+            }
+            if (document.forms["MyForm"]["hours"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter the Number of Working Hours";
+                return false;
+            }
+            if (document.forms["MyForm"]["sal"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Salary";
+                return false;
+            }
+            if (document.forms["MyForm"]["jobdesc"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Job Description";
+                return false;
+            }
+            
         }
     </script>
 

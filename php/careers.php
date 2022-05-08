@@ -45,7 +45,6 @@ $sql4 = "SELECT MAX(Info_Id) FROM PersonalInfo";
 $result = $conn->query($sql4);    
 $row = $result->fetch_assoc(); 
 $id = $row['MAX(Info_Id)'];
-echo $id;
 
 $sql5 = "INSERT INTO Volunteer(Info_Id,Image,School_College,Degree,Years,Result) VALUES ('$id','$img','$clg','$deg','$year','$percent')";
 

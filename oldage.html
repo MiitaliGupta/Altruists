@@ -101,7 +101,7 @@
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
         <!-- <div class="container"> -->
-            <form action="oldage.php" class="volunter-form container" method="post">
+            <form name="MyForm" action="php/oldage.php" class="volunter-form container" method="post" onsubmit="return validateForm()">
                 <div class="row d-md-flex">
                 <!-- <div class="col-md-6 d-flex ftco-animate"> -->
                     
@@ -154,6 +154,7 @@
                    
                     <div class="form-group">
                         <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                        <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
                     </div>
                 </div>
                 </div>
@@ -317,6 +318,52 @@
                 document.getElementById('logo').src = 'images/Blogo.png'
             else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350)
                 document.getElementById('logo').src = 'images/Wlogo.png'
+        }
+    </script>
+    <script>
+        function validateForm() {
+
+            if (document.forms["MyForm"]["name"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter You Name";
+                return false;
+            }
+            if (document.forms["MyForm"]["email"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Email";
+                return false;
+            }
+            if (document.forms["MyForm"]["number"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Number";
+                return false;
+            }
+            if (document.forms["MyForm"]["avail"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Number of Available Beds in Your Old Age Home";
+                return false;
+            }
+            if (document.forms["MyForm"]["sp"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Speciality";
+                return false;
+            }
+            if (document.forms["MyForm"]["line1"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Line 1 Address";
+                return false;
+            }
+            if (document.forms["MyForm"]["line2"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
+                return false;
+            }
+            if (document.forms["MyForm"]["city"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your City";
+                return false;
+            }
+            if (document.forms["MyForm"]["state"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your State";
+                return false;
+            }
+            if (document.forms["MyForm"]["pin"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
+                return false;
+            }
+            
         }
     </script>
 

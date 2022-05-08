@@ -100,7 +100,7 @@
   <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
     <div class="overlay"></div>
     <!-- <div class="container"> -->
-        <form action="php/teacher.php" class="volunter-form container" method="post">
+        <form name="MyForm" action="php/teacher.php" class="volunter-form container" method="post" onsubmit="return validateForm()">
             <div class="row d-md-flex">
             <!-- <div class="col-md-6 d-flex ftco-animate"> -->
                 
@@ -188,6 +188,7 @@
 
                 <div class="form-group">
                     <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                    <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
                 </div>
             </div>
             </div>
@@ -338,6 +339,93 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+    function validateForm() {
+
+        if (document.forms["MyForm"]["name"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter You Name";
+            return false;
+        }
+        if (document.forms["MyForm"]["dob"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Date of Birth";
+            return false;
+        }
+        if (document.forms["MyForm"]["gender"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Select Your Gender";
+            return false;
+        }
+        if (document.forms["MyForm"]["email"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Email";
+            return false;
+        }
+        if (document.forms["MyForm"]["number"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Number";
+            return false;
+        }
+        if (document.forms["MyForm"]["adhaar"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Adhaar Number";
+            return false;
+        }
+        if (document.forms["MyForm"]["line1"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Line 1 Address";
+            return false;
+        }
+        if (document.forms["MyForm"]["line2"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
+            return false;
+        }
+        if (document.forms["MyForm"]["city"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your City";
+            return false;
+        }
+        if (document.forms["MyForm"]["state"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your State";
+            return false;
+        }
+        if (document.forms["MyForm"]["pin"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
+            return false;
+        }
+        if (document.forms["MyForm"]["clg"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your School/College";
+            return false;
+        }
+        if (document.forms["MyForm"]["deg"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Degree";
+            return false;
+        }
+        if (document.forms["MyForm"]["year"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Pass Out Year";
+            return false;
+        }
+        if (document.forms["MyForm"]["percent"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Result %";
+            return false;
+        }
+        if (document.forms["MyForm"]["exp"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Your Teaching Experience in Years";
+            return false;
+        }
+        if (document.forms["MyForm"]["sub1"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Subject";
+            return false;
+        }
+        if (document.forms["MyForm"]["cl1"].value == "") {
+          document.getElementById("div1").innerHTML = "*Please Enter Class";
+          return false;
+        }
+        if (document.forms["MyForm"]["sub2"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Subject";
+            return false;
+        }
+        if (document.forms["MyForm"]["cl2"].value == "") {
+            document.getElementById("div1").innerHTML = "*Please Enter Class";
+            return false;
+        }
+        
+    }
+</script>
 
 </body>
 

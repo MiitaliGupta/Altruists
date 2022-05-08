@@ -80,28 +80,29 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
-                            <li><a class="dropdown-item" href="teacher.html">Teacher Sign Up</a></li>
-                            <li><a class="dropdown-item" href="student.html">Student Sign Up</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
-                            <li><a class="dropdown-item" href="employer.html">Employer Registration</a></li>
-                            <li><a class="dropdown-item" href="jobsearch.html">Find a Job</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
-                            <li><a class="dropdown-item" href="oldage.html">Old Age Home Registration</a></li>
-                            <li><a class="dropdown-item" href="oldagesearch.html">Find an Old Age Home</a></li>
-                        </ul>
-                    </li>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <li><a class="dropdown-menu" href="#">Education</a></li> -->
+              <li><a class="dropdown-item" href="teacher.html">Teacher Sign Up</a></li>
+              <li><a class="dropdown-item" href="student.html">Student Sign Up</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-menu" href="#">Employement</a></li> -->
+              <li><a class="dropdown-item" href="employer.html">Employer Registration</a></li>
+              <li><a class="dropdown-item" href="jobsearch.html">Find a Job</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Job Seeking</a></li> -->
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-menu" href="#">Sheltering</a></li> -->
+              <li><a class="dropdown-item" href="oldage.html">Old Age Home Registration</a></li>
+              <li><a class="dropdown-item" href="oldagesearch.html">Find an Old Age Home</a></li>
+            </ul>
+          </li>
                     <li class="nav-item"><a href="donate.html" class="nav-link">Donation</a></li>
                     <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
@@ -128,22 +129,15 @@
                     <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
                 </div>
             </div>
-            <div class="row d-md-flex">
-                <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
-                    <div id="tab">
-                        <div class="form-group">
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </form>
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <!-- <div class="row d-md-flex"> -->
             <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
-                <div id="tab">
-                    <!-- <div class="form-group"> -->
+            <div id="tab">
+                    <div class="form-group">
                     <table style="border: 1px solid white; width: 100%; padding-left: 40px" cellpadding="13">
-
+                    
                         <thead>
                             <tr>
                                 <!-- <th style="border: 1px solid white; color: white; width: 8.33%; text-align: center;">SNo</td> -->
@@ -197,7 +191,7 @@
                     <br>
                     <!-- </div> -->
                     <!-- <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;"> -->
-                    <div id="tab">
+                    
                         <div class="form-group">
                             <table style="border: 1px solid white;" cellpadding="13">
                                 <thead>
@@ -236,14 +230,14 @@
                             </table>
 
                         </div>
-                    </div>
+                    
                     <div style="padding-bottom: 13px;"></div>
 
 
                     <!-- </div> -->
 
                     <!-- <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;"> -->
-                    <div id="tab">
+                    
                         <div class="form-group">
                             <table style="border: 1px solid white; width: 100%;" cellpadding="13">
 

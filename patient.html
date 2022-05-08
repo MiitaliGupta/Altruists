@@ -101,7 +101,7 @@
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
         <!-- <div class="container"> -->
-            <form action="php/patient.php" class="volunter-form container" method="post">
+            <form name="MyForm" action="php/patient.php" class="volunter-form container" method="post" onsubmit="return validateForm()">
                 <div class="row d-md-flex">
                 <!-- <div class="col-md-6 d-flex ftco-animate"> -->
                     
@@ -204,6 +204,7 @@
                    
                     <div class="form-group">
                         <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
+                        <div id="div1" style="color: rgb(17, 0, 255); padding-top: 10px;"></div>
                     </div>
                 </div>
                 </div>
@@ -367,6 +368,87 @@
                 document.getElementById('logo').src = 'images/Blogo.png'
             else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350)
                 document.getElementById('logo').src = 'images/Wlogo.png'
+        }
+    </script>
+    <script>
+        function validateForm() {
+
+            if (document.forms["MyForm"]["name"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Name";
+                return false;
+            }
+            if (document.forms["MyForm"]["dob"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Date of Birth";
+                return false;
+            }
+            if (document.forms["MyForm"]["adhaar"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Adhaar Number";
+                return false;
+            }
+            if (document.forms["MyForm"]["homeid"].value == "") {
+                document.getElementById("div1").innerHTML = "*The Old Age Home You are Applying for, Please Enter its ID";
+                return false;
+            }
+            if (document.forms["MyForm"]["memname"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Family Member's Name";
+                return false;
+            }
+            if (document.forms["MyForm"]["mememail"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Family Member's Email";
+                return false;
+            }
+            if (document.forms["MyForm"]["memnum"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Family Member's Contact Number";
+                return false;
+            }
+            if (document.forms["MyForm"]["heigth"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Height";
+                return false;
+            }
+            if (document.forms["MyForm"]["weigth"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Weight";
+                return false;
+            }
+            if (document.forms["MyForm"]["bmi"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter BMI";
+                return false;
+            }
+            if (document.forms["MyForm"]["blood"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Select Blood Group";
+                return false;
+            }
+            if (document.forms["MyForm"]["sugar"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Sugar Level";
+                return false;
+            }
+            if (document.forms["MyForm"]["chol"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Cholestrol Level";
+                return false;
+            }
+            if (document.forms["MyForm"]["haemo"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Haemoglobin Level";
+                return false;
+            }
+            if (document.forms["MyForm"]["line1"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Line 1 Address";
+                return false;
+            }
+            if (document.forms["MyForm"]["line2"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Line 2 Address";
+                return false;
+            }
+            if (document.forms["MyForm"]["city"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your City";
+                return false;
+            }
+            if (document.forms["MyForm"]["state"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your State";
+                return false;
+            }
+            if (document.forms["MyForm"]["pin"].value == "") {
+                document.getElementById("div1").innerHTML = "*Please Enter Your Pin";
+                return false;
+            }
         }
     </script>
 
