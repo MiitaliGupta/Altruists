@@ -2,11 +2,11 @@
 
 
 $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","Loafer123","Altruists",3306);
-
-		$user=$_POST['userid'];
+        session_start();
+		$_SESSION['user']=$_POST['userid'];
 		$pwd=$_POST['pwd'];
-        $type=ord($user);
-		$sql="select Password from User where User_Id= '$user'";
+        $type=ord($_SESSION['user']);
+		$sql="SELECT Password from User where User_Id='$_SESSION[user]';";
 
         $result = mysqli_query($con, $sql);  
         $row = $result->fetch_assoc(); 
@@ -14,7 +14,7 @@ $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","
          
         if($id == $pwd)
         {  
-            if($user === "admin")
+            if($_SESSION['user'] === "admin")
             {
                 echo '<script LANGUAGE="JavaScript">
                 window.location. href="http://localhost:3307/Altruists/admin.html";
@@ -29,7 +29,7 @@ $con = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com","admin","
             else if($type === 115 || $type === 83)
             {
                 echo '<script LANGUAGE="JavaScript">
-                window.location. href="http://localhost:3307/Altruists/studentdisplay.html";
+                window.location. href="http://localhost:3307/Altruists/studentdisplay.php";
                 </script>';
             }
         }  

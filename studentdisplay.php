@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 
 <head>
@@ -116,21 +119,7 @@
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
 
         <div class="overlay"></div>
-        <form name="MyForm" action="studentdisplay.php" class="volunter-form container" method="post">
-            <div class=" col col-md-6 pl-md-5  volunteer ftco-animate order-last">
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Student ID" name="Sid">
-                </div>
-
-
-
-                <div class="form-group">
-                    <input type="submit" value="Apply" class="btn btn-white py-3 px-5">
-                </div>
-            </div>
-           
-        </form>
+       
         <form name="MyForm" action="admin.php" class="volunter-form container" method="post">
             <!-- <div class="row d-md-flex"> -->
             <div class="col col-md-12 pl-md-5 volunteer ftco-animate order-first" style="margin-top: 17px;">
@@ -162,14 +151,20 @@
                             error_reporting(E_ERROR | E_PARSE);
 
                             $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
-                            $Sid = $_POST['Sid'];
+                            // $Sid = $_POST['Sid'];
+                            
+                            $userid = $_SESSION['user'];
+                            $sql ="SELECT Id FROM Student WHERE User_Id='$userid';";
+                            $res = $conn->query($sql);
+                            $row = $res->fetch_assoc();
+                            $Sid = $row['Id'];
                             $sql1 = "SELECT Id, Class,Subject1, Subject2, Subject3,Subject4, Subject5, StrongestSubject, WeakestSubject FROM Academic WHERE Id = '$Sid';";
 
-                            $result = $conn->query($sql1);
+                            $results = $conn->query($sql1);
 
-                            if ($result->num_rows > 0) {
+                            if ($results->num_rows > 0) {
 
-                                while ($row = $result->fetch_assoc()) {
+                                while ($row = $results->fetch_assoc()) {
                                     echo "<tr>
                                             <td >" . $row["Id"] . "</td>
                                             <td >" . $row["Class"] . "</td>
@@ -208,10 +203,9 @@
                                     error_reporting(E_ERROR | E_PARSE);
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
                                     $sql1 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
-                                    $result = $conn->query($sql1);
-                                    $id = $row["Info_Id"];
-                                    if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) {
+                                    $result1 = $conn->query($sql1);
+                                    if ($result1->num_rows > 0) {
+                                        while ($row = $result1->fetch_assoc()) {
                                             echo "<tr>
                                                     <td >" . $row["Id"] . "</td>
                                                     <td >" . $row["MotherName"] . "</td>
@@ -264,14 +258,14 @@
 
                                     $conn = new mysqli("altruists.ctpunwarlucf.us-east-1.rds.amazonaws.com", "admin", "Loafer123", "Altruists", 3306);
 
-                                    $sql2 = "SELECT Id,Info_Id, MotherName, MotherSalary,FatherName, FatherSalary FROM Student WHERE Id = '$Sid';";
+                                    $sql2 = "SELECT Info_Id FROM Student WHERE Id = '$Sid';";
 
                                     $result2 = $conn->query($sql2);
                                     $row = $result2->fetch_assoc();
-                                    $id = $row["Info_Id"];
+                                    $ik = $row['Info_Id'];
 
 
-                                    $sql1 = "SELECT Names,DOB,Gender, Email, ContactNo,AdhaarNo, Add_Id FROM PersonalInfo WHERE Info_Id = $id;";
+                                    $sql1 = "SELECT Names,DOB,Gender, Email, ContactNo,AdhaarNo, Add_Id FROM PersonalInfo WHERE Info_Id = '$ik';";
 
                                     $result = $conn->query($sql1);
 
